@@ -108,10 +108,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Fira Code
+          family: Fira Code Retina
 
     # The `style` can be specified to pick a specific face.
-  style: Retina
+  style: Regular
 
   # Bold font face
   bold:
@@ -119,10 +119,10 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Fira Code
+    family: Fira Code Retina
 
     # The `style` can be specified to pick a specific face.
-  style: Retina Bold
+  style: Bold
 
   # Italic font face
   italic:
@@ -130,10 +130,10 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Fira Code
+    family: Fira Code Retina
 
     # The `style` can be specified to pick a specific face.
-    style: Retina Italic
+  style: Italic
 
   # Bold italic font face
   bold_italic:
@@ -141,10 +141,10 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: monospace
+    family: Fira Code Retina
 
     # The `style` can be specified to pick a specific face.
-    style: Retina Bold Italic
+    style: Bold Italic
 
   # Point size
   #size: 11.0
@@ -245,7 +245,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-#background_opacity: 1.0
+background_opacity: 0.95
 
 #selection:
   # This string contains all characters that are used as separators for

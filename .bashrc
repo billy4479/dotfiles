@@ -108,8 +108,7 @@ source $OSH/oh-my-bash.sh
 
 for script in `ls ${HOME}/scripts/*.sh`; do source "$script"; done
 
-if [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -z "$SSH_CLIENT" ] ; then
-  tmux new-session -A -s main
-fi
+#if [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -z "$SSH_CLIENT" ] ; then
+#  tmux new-session -A -s main
+#fi
 cls && colorscript random
-source "$HOME/.cargo/env"
