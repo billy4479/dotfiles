@@ -19,6 +19,7 @@ cds(){
 alias cls="clear"
 alias pg="ping 8.8.8.8"
 alias vi="vim"
+alias vim="nvim"
 alias hey="cls && neofetch"
 
 unalias ll
