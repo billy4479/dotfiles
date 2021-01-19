@@ -112,3 +112,5 @@ for script in `ls ${HOME}/scripts/bash/*.sh`; do source "$script"; done
 #  tmux new-session -A -s main
 #fi
 cls && colorscript random
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

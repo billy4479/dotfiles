@@ -37,5 +37,5 @@ alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
 function mkcd(){ mkdir -p "$1" && cd "$1";}
 
 #unalias c
-alias t="tmux new-session -A -s main"
+alias t="tmux attach"
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'

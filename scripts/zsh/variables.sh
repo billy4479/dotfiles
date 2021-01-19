@@ -8,4 +8,8 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 export EDITOR="vim"
 export servers='/media/billy/SSDSata/Server Minecraft'
 
+# Flutter
+#export CHROME_EXECUTABLE=`which chromium`
+
+
 set +o noclobber
