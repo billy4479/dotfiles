@@ -10,31 +10,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 
 call plug#end()
-
-" Theme
-colorscheme onedark
-let g:airline_theme = 'onedark'
-
-"colorscheme material
-"let g:material_theme_style = 'darker-community'
-"let g:airline_theme = 'material'
-
-" Colorizer
-lua require'colorizer'.setup()
-
-syntax on
 set encoding=utf-8
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
 
-set number relativenumber
+source $HOME/.config/nvim/theme.vim
+source $HOME/.config/nvim/nerdtree.vim
+source $HOME/.config/nvim/fzf.vim
 
-" NERDTree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
