@@ -1,3 +1,16 @@
+# automatically make it a tmux session
+if [ -n "$PS1" ] &&
+    [ -n "$DISPLAY" ] &&
+    [[ ! "$TERM" =~ screen ]] &&
+    [[ ! "$TERM" =~ tmux ]] &&
+    [ -z "$TMUX" ] &&
+    ! [ -e ~/storage/shared ] &&
+    command -v tmux 2>&1 1>/dev/null
+then
+        exec tmux
+fi
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -105,16 +118,23 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# kill all tmux sessions with no terminal emulator attached
+tmkill() {
+    LIST="$(tmux ls)"
+    TSESSIONS=""
+    while read -r line; do
+        if ! echo "$line" | grep 'attached'; then
+            tmux kill-session -t "$(echo $line | grep -oP '^\d\d?')"
+        fi
+    done <<<"$LIST"
+}
+
+for script in `command ls ${HOME}/scripts/zsh/*.sh`; do source "$script"; done
+colorscript random
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-# Start tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-    exec tmux
-else
-    for script in `command ls ${HOME}/scripts/zsh/*.sh`; do source "$script"; done
-    colorscript random
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-fi
 
