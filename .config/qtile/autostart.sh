@@ -2,5 +2,8 @@
 lxsession &
 picom --experimental-backends &
 nitrogen --restore &
-#volumeicon &
-#nm-applet &
+redshift &
+# volumeicon &
+nm-applet &
+pasystray &
+xfce4-clipman &

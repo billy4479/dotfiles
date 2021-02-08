@@ -11,7 +11,7 @@ from typing import List  # noqa: F401
 
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"                             # My terminal of choice
-myConfig = "/home/dt/.config/qtile/config.py"    # The Qtile config file location
+myConfig = "/home/billy/.config/qtile/config.py"    # The Qtile config file location
 
 keys = [
          ### The essentials
@@ -20,7 +20,7 @@ keys = [
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
-             lazy.spawn("dmenu_run -p 'Run: '"),
+             lazy.spawn("dmenu_run -h 20 -p 'Run: '"),
              #lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
              desc='Run Launcher'
              ),
@@ -39,6 +39,14 @@ keys = [
          Key([mod, "shift"], "q",
              lazy.shutdown(),
              desc='Shutdown Qtile'
+             ),
+         Key([mod], "b",
+             lazy.spawn("brave"),
+             desc='Spawn a browser'
+             ),
+         Key([mod], "v",
+             lazy.spawn("xfce4-popup-clipman"),
+             desc='Clipman popup'
              ),
          ### Switch focus to specific monitor
          Key([mod], "comma",
@@ -106,49 +114,29 @@ keys = [
              lazy.layout.toggle_split(),
              desc='Toggle between split and unsplit sides of stack'
              ),
-         ### Dmenu scripts launched with ALT + CTRL + KEY
-         Key(["mod1", "control"], "e",
-             lazy.spawn("./.dmenu/dmenu-edit-configs.sh"),
-             desc='Dmenu script for editing config files'
-             ),
-         Key(["mod1", "control"], "m",
-             lazy.spawn("./.dmenu/dmenu-sysmon.sh"),
-             desc='Dmenu system monitor script'
-             ),
-         Key(["mod1", "control"], "p",
-             lazy.spawn("passmenu"),
-             desc='Passmenu'
-             ),
-         Key(["mod1", "control"], "r",
-             desc='Dmenu reddio script'
-             ),
-         Key(["mod1", "control"], "s",
-             lazy.spawn("./.dmenu/dmenu-surfraw.sh"),
-             desc='Dmenu surfraw script'
-             ),
-         Key(["mod1", "control"], "t",
-             lazy.spawn("./.dmenu/dmenu-trading.sh"),
-             desc='Dmenu trading programs script'
-             ),
-         Key(["mod1", "control"], "i",
-             lazy.spawn("./.dmenu/dmenu-scrot.sh"),
-             desc='Dmenu scrot script'
-             ),
-         ### My applications launched with SUPER + ALT + KEY
-         Key([mod], "b",
-             lazy.spawn("chromium --use-gl=desktop"),
-             desc='browser'
-             ),
+        ### Spotify keys
+        Key([], "XF86AudioPlay",
+            lazy.spawn('dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause'),
+            desc='Sent play/pause signal to spotify'
+            ),
+        Key([], "XF86AudioNext",
+            lazy.spawn('dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next'),
+            desc='Sent next signal to spotify'
+            ),
+        Key([], "XF86AudioPrev",
+            lazy.spawn('dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous'),
+            desc='Sent previous signal to spotify'
+            ),
 ]
 
 group_names = [("WWW", {'layout': 'monadtall'}),
                ("DEV", {'layout': 'monadtall'}),
                ("SYS", {'layout': 'monadtall'}),
-               ("DOC", {'layout': 'monadtall'}),
                ("CHAT", {'layout': 'monadtall'}),
                ("MUS", {'layout': 'monadtall'}),
+               ("BG", {'layout': 'monadtall'}),
+               ("DOC", {'layout': 'monadtall'}),
                ("SRV", {'layout': 'monadtall'}),
-               ("MUS", {'layout': 'monadtall'}),
                ("GAME", {'layout': 'floating'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
@@ -193,19 +181,20 @@ layouts = [
     layout.Floating(**layout_theme)
 ]
 
-colors = [["#282c34", "#282c34"], # panel background
-          ["#434758", "#434758"], # background for current screen tab
-          ["#ffffff", "#ffffff"], # font color for group names
-          ["#ff5555", "#ff5555"], # border line color for current tab
-          ["#8d62a9", "#8d62a9"], # border line color for other tab and odd widgets
-          ["#668bd7", "#668bd7"], # color for the even widgets
-          ["#e1acff", "#e1acff"]] # window name
+colors = [["#212121", "#212121"], # panel background
+          ["#212121", "#212121"], # background for current screen tab
+          ["#eeffff", "#eeffff"], # font color for group names
+          ["#ff5370", "#ff5370"], # border line color for current tab 
+          ["#c792ea", "#c792ea"], # border line color for other tab and odd widgets
+          ["#82aaff", "#82aaff"], # color for the even widgets
+          ["#c3e88d", "#c3e88d"], # window name
+         ]
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
-    font="Ubuntu Mono",
+    font="Fira Code Retina",
     fontsize = 12,
     padding = 2,
     background=colors[2]
@@ -225,11 +214,11 @@ def init_widgets_list():
               #         mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn('dmenu_run')}
               #         ),
               widget.GroupBox(
-                       font = "Ubuntu Bold",
+                       font = "Fira Code Bold",
                        fontsize = 9,
                        margin_y = 3,
-                       margin_x = 0,
-                       padding_y = 5,
+                       margin_x = 3,
+                       padding_y = 7,
                        padding_x = 3,
                        borderwidth = 3,
                        active = colors[2],
@@ -244,13 +233,13 @@ def init_widgets_list():
                        foreground = colors[2],
                        background = colors[0]
                        ),
-              widget.Prompt(
-                       prompt = prompt,
-                       font = "Ubuntu Mono",
-                       padding = 10,
-                       foreground = colors[3],
-                       background = colors[1]
-                       ),
+              #widget.Prompt(
+              #         prompt = prompt,
+              #         font = "Ubuntu Mono",
+              #         padding = 10,
+              #         foreground = colors[3],
+              #         background = colors[1]
+              #         ),
               widget.Sep(
                        linewidth = 0,
                        padding = 40,
@@ -260,162 +249,100 @@ def init_widgets_list():
               widget.WindowName(
                        foreground = colors[6],
                        background = colors[0],
-                       padding = 0
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[0],
-                       foreground = colors[4],
-                       padding = 0,
-                       fontsize = 37
-                       ),
-              widget.TextBox(
-                       text = " ₿",
-                       padding = 0,
-                       foreground = colors[2],
-                       background = colors[4],
-                       fontsize = 12
-                       ),
-              widget.BitcoinTicker(
-                       foreground = colors[2],
-                       background = colors[4],
-                       padding = 5
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[4],
-                       foreground = colors[5],
-                       padding = 0,
-                       fontsize = 37
+                       padding_y = 2,
+                       fontsize = 11
                        ),
               widget.TextBox(
                        text = " 🌡",
                        padding = 2,
                        foreground = colors[2],
-                       background = colors[5],
+                       background = colors[0],
                        fontsize = 11
                        ),
               widget.ThermalSensor(
                        foreground = colors[2],
-                       background = colors[5],
+                       background = colors[0],
                        threshold = 90,
                        padding = 5
-                       ),
-              widget.TextBox(
-                       text='',
-                       background = colors[5],
-                       foreground = colors[4],
-                       padding = 0,
-                       fontsize = 37
                        ),
               widget.TextBox(
                        text = " ⟳",
                        padding = 2,
                        foreground = colors[2],
-                       background = colors[4],
+                       background = colors[0],
                        fontsize = 14
                        ),
-              widget.Pacman(
-                       update_interval = 1800,
+              widget.CheckUpdates(
+                       distro = 'Arch_yay',
+                       update_interval = 60,
                        foreground = colors[2],
+                       background = colors[0],
+                       no_update_string = 'No Updates',
+                       execute = 'yay -Syu',
                        mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
-                       background = colors[4]
+                       #fmt = "Updates ",     
+                       padding = 5
                        ),
-              widget.TextBox(
-                       text = "Updates",
-                       padding = 5,
-                       mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
-                       foreground = colors[2],
-                       background = colors[4]
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[4],
-                       foreground = colors[5],
-                       padding = 0,
-                       fontsize = 37
-                       ),
+              #widget.TextBox(
+              #         text = "Updates",
+              #         padding = 5,
+              #         mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
+               #        foreground = colors[2],
+               #        background = colors[4]
+               #        ),
               widget.TextBox(
                        text = " 🖬",
                        foreground = colors[2],
-                       background = colors[5],
+                       background = colors[0],
                        padding = 0,
                        fontsize = 14
                        ),
               widget.Memory(
                        foreground = colors[2],
-                       background = colors[5],
+                       background = colors[0],
                        mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e htop')},
                        padding = 5
                        ),
-              widget.TextBox(
-                       text='',
-                       background = colors[5],
-                       foreground = colors[4],
-                       padding = 0,
-                       fontsize = 37
-                       ),
               widget.Net(
-                       interface = "enp6s0",
+                       interface = "eno1",
                        format = '{down} ↓↑ {up}',
                        foreground = colors[2],
-                       background = colors[4],
+                       background = colors[0],
                        padding = 5
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[4],
-                       foreground = colors[5],
-                       padding = 0,
-                       fontsize = 37
                        ),
               widget.TextBox(
                       text = " Vol:",
                        foreground = colors[2],
-                       background = colors[5],
+                       background = colors[0],
                        padding = 0
                        ),
               widget.Volume(
                        foreground = colors[2],
-                       background = colors[5],
+                       background = colors[0],
                        padding = 5
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[5],
-                       foreground = colors[4],
-                       padding = 0,
-                       fontsize = 37
                        ),
               widget.CurrentLayoutIcon(
                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
                        foreground = colors[0],
-                       background = colors[4],
+                       background = colors[0],
                        padding = 0,
                        scale = 0.7
                        ),
               widget.CurrentLayout(
                        foreground = colors[2],
-                       background = colors[4],
+                       background = colors[0],
                        padding = 5
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[4],
-                       foreground = colors[5],
-                       padding = 0,
-                       fontsize = 37
                        ),
               widget.Clock(
                        foreground = colors[2],
-                       background = colors[5],
+                       background = colors[0],
                        format = "%A, %B %d  [ %H:%M ]"
                        ),
               widget.Sep(
                        linewidth = 0,
-                       padding = 10,
+                       padding = 5,
                        foreground = colors[0],
-                       background = colors[5]
+                       background = colors[0]
                        ),
               widget.Systray(
                        background = colors[0],
