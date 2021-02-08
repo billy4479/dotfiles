@@ -24,9 +24,9 @@ alias hey="cls && neofetch"
 
 unalias ll
 unalias la
-alias ls="exa --color=auto --group-directories-first -lh"
-alias ll="ls -a"
-alias la=ll
+alias ls="exa --color=auto --group-directories-first -lah"
+alias ll="ls"
+alias la="ls"
 alias std-ls="/bin/ls --color=auto"
 
 alias clipcopy="tee /dev/stderr | xclip -in -selection clipboard"
