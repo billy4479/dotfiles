@@ -24,9 +24,9 @@ alias hey="cls && neofetch"
 
 unalias ll
 unalias la
-alias ls="exa --color=auto --group-directories-first -l"
-alias ll="ls -a"
-alias la=ll
+alias ls="exa --color=auto --group-directories-first -lah"
+alias ll="ls"
+alias la="ls"
 alias std-ls="/bin/ls --color=auto"
 
 alias clipcopy="tee /dev/stderr | xclip -in -selection clipboard"
@@ -39,3 +39,7 @@ function mkcd(){ mkdir -p "$1" && cd "$1";}
 #unalias c
 alias t="tmux attach"
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+man() { 
+    /usr/bin/man $1 | bat --wrap never --force-colorization
+}

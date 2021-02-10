@@ -9,19 +9,19 @@ cdc(){
 
 c() {
     if [ "$1" = "" ]; then
-        code .
+        codium .
         return
     fi
 
     if [ -d "$code/$1" ]; then
         cd $code/$1
-        code .
+        codium .
     else
         echo -n "Directory not found! Try on github? (y/N) "
         read answer
         if [ "$answer" = "y" ]; then
             cd $code
-            git clone billy4479/$1 && cd $1 && code .
+            git clone billy4479/$1 && cd $1 && codium .
         fi
     fi
 }
