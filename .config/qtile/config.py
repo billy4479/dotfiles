@@ -10,9 +10,8 @@ from libqtile.lazy import lazy
 from typing import List  # noqa: F401
 
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
-myTerm = "kitty"                             # My terminal of choice
-# The Qtile config file location
-myConfig = "/home/billy/.config/qtile/config.py"
+myTerm = "kitty"                                 # My terminal of choice
+myConfig = "/home/billy/.config/qtile/config.py" # The Qtile config file location
 
 keys = [
     # The essentials
