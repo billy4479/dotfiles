@@ -40,6 +40,6 @@ function mkcd(){ mkdir -p "$1" && cd "$1";}
 alias t="tmux attach"
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-man() { 
-    /usr/bin/man $1 | bat --wrap never --force-colorization
-}
+# man() { 
+#     /usr/bin/man $1 | bat --wrap never --force-colorization
+# }
