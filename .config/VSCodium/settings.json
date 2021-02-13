@@ -1,0 +1,118 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.iconTheme": "material-icon-theme",
+    "python.jediEnabled": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "csharp.referencesCodeLens.enabled": false,
+    "editor.showFoldingControls": "always",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "[csharp]": {
+        "editor.defaultFormatter": "Leopotam.csharpfixformat"
+    },
+    "editor.maxTokenizationLineLength": 10000000,
+    "csharp.maxProjectFileCountForDiagnosticAnalysis": 0,
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "discord.lowerDetailsDebugging": "Debugging...",
+    "discord.lowerDetailsEditing": "{gitreponame}",
+    "discord.lowerDetailsNotFound": "{totallines}",
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur"
+    },
+    "editor.formatOnSave": true,
+    "csharpfixformat.style.spaces.beforeParenthesis": false,
+    "cSpell.userWords": [
+        "CSRF",
+        "Cringinator",
+        "Lastname",
+        "bson",
+        "firstname",
+        "godotenv",
+        "mongodb",
+        "tgbotapi",
+        "tmpl",
+        "uuid",
+        "vugu",
+        "wasm"
+    ],
+    "editor.lineHeight": 0,
+    "workbench.startupEditor": "none",
+    "git.autofetch": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 10000,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "workbench.preferredDarkColorTheme": "Ayu Dark Bordered",
+    "dart.allowAnalytics": false,
+    "workbench.view.alwaysShowHeaderActions": true,
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "dart.previewFlutterUiGuides": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontWeight": 500,
+    "terminal.integrated.fontWeightBold": "600",
+    "terminal.integrated.fontWeight": "500",
+    "editor.fontLigatures": true,
+    "vetur.experimental.templateInterpolationService": true,
+    "bracket-pair-colorizer-2.colors": [
+        "#49BAFF",
+        "DarkOrange",
+        "#75d11a",
+        "#ffe45c"
+    ],
+    "bracket-pair-colorizer-2.highlightActiveScope": true,
+    "bracket-pair-colorizer-2.activeScopeCSS": [
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}",
+        "opacity: 0.5"
+    ],
+    "bracket-pair-colorizer-2.showBracketsInGutter": true,
+    "bracket-pair-colorizer-2.showBracketsInRuler": true,
+    "bracket-pair-colorizer-2.scopeLineRelativePosition": true,
+    "bracket-pair-colorizer-2.scopeLineCSS": [
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}",
+        "opacity: 0.5"
+    ],
+    "javascript.format.enable": false,
+    "javascript.validate.enable": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": false,
+        "source.fixAll.eslint": true
+    },
+    "typescript.format.enable": false,
+    "python.languageServer": "Microsoft",
+    "telemetry.enableTelemetry": false,
+    "workbench.list.automaticKeyboardNavigation": false,
+    "discord.workspaceElapsedTime": true,
+    "todo-tree.tree.showScanModeButton": false,
+    "window.zoomLevel": 0,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "dart.debugExternalLibraries": false,
+    "dart.debugSdkLibraries": false,
+    "go.lintTool": "golangci-lint",
+    "editor.fontSize": 15,
+    "omnisharp.useGlobalMono": "always",
+    "dart.previewLsp": true,
+    "oneDarkPro.italic": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+    "C_Cpp.updateChannel": "Insiders",
+    "cmake.configureOnOpen": true,
+}
