@@ -11,7 +11,7 @@ from typing import List  # noqa: F401
 
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"                                 # My terminal of choice
-myConfig = "/home/billy/.config/qtile/config.py" # The Qtile config file location
+myConfig = "/home/billy/.config/qtile/config.py"  # The Qtile config file location
 
 keys = [
     # The essentials
@@ -20,8 +20,9 @@ keys = [
         desc='Launches My Terminal'
         ),
     Key([mod, "shift"], "Return",
-        lazy.spawn("dmenu_run -h 20 -p 'Run: '"),
-        #lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
+        lazy.spawn('j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : \' \') | sort -u)) | dmenu" --display-binary'),
+        # lazy.spawn("dmenu_run -h 20 -p 'Run: '"),
+        # lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
         desc='Run Launcher'
         ),
     Key([mod], "Tab",

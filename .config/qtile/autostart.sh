@@ -1,9 +1,9 @@
 #! /bin/bash 
 lxsession &
-picom --experimental-backends &
+picom --experimental-backends --xrender-sync-fence &
 nitrogen --restore &
 redshift &
 # volumeicon &
 nm-applet &
-pasystray &
+# pasystray &
 xfce4-clipman &
