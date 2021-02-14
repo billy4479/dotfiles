@@ -1,36 +1,37 @@
 {
-    "todo-tree.tree.showScanModeButton": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "One Dark Pro",
-    "go.useLanguageServer": true,
-    "editor.fontFamily": "Fira Code Retina",
-    "editor.fontLigatures": true,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.startupEditor": "newUntitledFile",
-    "eslint.packageManager": "yarn",
-    "eslint.format.enable": true,
-    "eslint.alwaysShowStatus": true,
-    "eslint.probe": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "html",
-        "vue",
-        "markdown",
-        "typescript"
-    ],
-    "eslint.lintTask.enable": true,
-    "editor.formatOnSave": true,
-    "[typescript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "python.languageServer": "Microsoft",
+  "todo-tree.tree.showScanModeButton": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "One Dark Pro",
+  "go.useLanguageServer": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.startupEditor": "newUntitledFile",
+  "eslint.packageManager": "yarn",
+  "eslint.format.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "typescript"
+  ],
+  "eslint.lintTask.enable": true,
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.languageServer": "Microsoft",
+  "editor.fontWeight": 500
 }
