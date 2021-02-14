@@ -151,24 +151,37 @@ for i, (name, kwargs) in enumerate(group_names, 1):
     # Send current window to another group
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
 
+col = {
+    'bg':    '#282c34',
+    'fg':    '#abb2bf',
+    'black': '#212121',
+    'white': '#efffff',
+    'red':   '#e06c75',
+    'purple':'#c678dd',
+    'blue':  '#61afef',
+    'green': '#98c379',
+    'yellow':'#e5c07b',
+    'cyan':  '#56b6c2',
+}
+
 layout_theme = {"border_width": 2,
                 "margin": 6,
-                "border_focus": "e1acff",
-                "border_normal": "1D2330"
+                "border_focus": col['blue'],
+                "border_normal": col['bg'],
                 }
 
 layouts = [
-    # layout.MonadWide(**layout_theme),
+    layout.MonadWide(**layout_theme),
     # layout.Bsp(**layout_theme),
-    #layout.Stack(stacks=2, **layout_theme),
+    # layout.Stack(stacks=2, **layout_theme),
     # layout.Columns(**layout_theme),
-    # layout.RatioTile(**layout_theme),
+    layout.RatioTile(**layout_theme),
     # layout.VerticalTile(**layout_theme),
-    # layout.Matrix(**layout_theme),
+    layout.Matrix(**layout_theme),
     # layout.Zoomy(**layout_theme),
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
-    #layout.Tile(shift_windows=True, **layout_theme),
+    layout.Tile(shift_windows=False, **layout_theme),
     # layout.Stack(num_stacks=2),
     # layout.TreeTab(
     #     font = "Ubuntu",
@@ -187,18 +200,6 @@ layouts = [
     layout.Floating(**layout_theme)
 ]
 
-col = {
-    'bg':    '#282c34',
-    'fg':    '#abb2bf',
-    'black': '#212121',
-    'white': '#efffff',
-    'red':   '#e06c75',
-    'purple': '#c678dd',
-    'blue':  '#61afef',
-    'green': '#98c379',
-    'yellow': '#e5c07b',
-    'cyan':  '#56b6c2',
-}
 
 # colors = [["#212121", "#212121"], # panel background
 #           ["#212121", "#212121"], # background for current screen tab
@@ -213,7 +214,7 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
-    font="Fira Code Retina",
+    font="Fira Code",
     fontsize=12,
     padding=2,
     background=col['bg']
