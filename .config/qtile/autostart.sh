@@ -7,3 +7,4 @@ redshift &
 nm-applet &
 # pasystray &
 xfce4-clipman &
+numlockx &

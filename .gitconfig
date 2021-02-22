@@ -3,3 +3,5 @@
 	email = giachi.ellero@gmail.com
 [hub]
 	protocol = ssh
+[init]
+	defaultBranch = master

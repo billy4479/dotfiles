@@ -20,7 +20,7 @@ keys = [
         desc='Launches My Terminal'
         ),
     Key([mod, "shift"], "Return",
-        lazy.spawn('j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : \' \') | sort -u)) | dmenu" --display-binary'),
+        lazy.spawn('j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : \' \') | sort -u)) | dmenu -h 20" --display-binary'),
         # lazy.spawn("dmenu_run -h 20 -p 'Run: '"),
         # lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
         desc='Run Launcher'

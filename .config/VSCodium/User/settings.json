@@ -33,5 +33,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "python.languageServer": "Microsoft",
-  "editor.fontWeight": 500
+  "editor.fontWeight": 500,
+  "editor.fontSize": 16
 }

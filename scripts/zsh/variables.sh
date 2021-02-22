@@ -11,5 +11,6 @@ export servers='/media/billy/SSDSata/Server Minecraft'
 # Flutter
 #export CHROME_EXECUTABLE=`which chromium`
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 set +o noclobber
