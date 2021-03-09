@@ -13,6 +13,17 @@ mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"                                 # My terminal of choice
 myConfig = "/home/billy/.config/qtile/config.py"  # The Qtile config file location
 
+myLauncher = 'j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : \' \') | sort -u)) | dmenu -h 20" --display-binary'
+# myLauncher = "dmenu_run -h 20 -p 'Run: '"
+# myLauncher = "rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""
+
+screenshotFullToFile = 'maim /home/billy/Pictures/Screenshots/$(date +%Y-%m-%d\ %X).png'
+screenshotSelectionToFile = 'maim -s /home/billy/Pictures/Screenshots/$(date +%Y-%m-%d\ %X).png'
+screenshotWindowToFile = 'maim -i $(xdotool getactivewindow) /home/billy/Pictures/Screenshots/$(date +%Y-%m-%d\ %X).png'
+screenshotSelectionToClipboard = 'maim -s | xclip -selection clipboard -t image/png'
+screenshotFullToClipboard = 'maim -t 1 | xclip -selection clipboard -t image/png'
+screenshotWindowClipboard = 'maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png'
+
 keys = [
     # The essentials
     Key([mod], "Return",
@@ -20,9 +31,7 @@ keys = [
         desc='Launches My Terminal'
         ),
     Key([mod, "shift"], "Return",
-        lazy.spawn('j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : \' \') | sort -u)) | dmenu -h 20" --display-binary'),
-        # lazy.spawn("dmenu_run -h 20 -p 'Run: '"),
-        # lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
+        lazy.spawn(myLauncher),
         desc='Run Launcher'
         ),
     Key([mod], "Tab",
@@ -105,7 +114,7 @@ keys = [
     Key([mod, "shift"], "space",
         lazy.layout.rotate(),
         lazy.layout.flip(),
-        desc='Switch which side main pane occupies (XmonadTall)'
+        desc='Switch which side main pane occupies (monadtall)'
         ),
     Key([mod], "space",
         lazy.layout.next(),
@@ -130,6 +139,31 @@ keys = [
             lazy.spawn(
                 'dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous'),
             desc='Sent previous signal to spotify'
+        ),
+    # Screenshots
+    Key([], "Print",
+        lazy.spawn(screenshotSelectionToClipboard),
+        desc='Screenshot selection to clipboard',
+        ),
+    Key(["shift"], "Print",
+        lazy.spawn(screenshotSelectionToFile),
+        desc='Screenshot selection to file',
+        ),
+    Key(["control"], "Print",
+        lazy.spawn(screenshotFullToClipboard),
+        desc='Screenshot fullscreen to clipboard',
+        ),
+    Key(["control", "shift"], "Print",
+        lazy.spawn(screenshotFullToFile),
+        desc='Screenshot fullscreen to file',
+        ),
+    Key(["mod1"], "Print",
+        lazy.spawn(screenshotWindowClipboard),
+        desc='Screenshot active window to clipboard',
+        ),
+    Key(["mod1", "shift"], "Print",
+        lazy.spawn(screenshotSelectionToFile),
+        desc='Screenshot active window to clipboard',
         ),
 ]
 
@@ -157,10 +191,10 @@ col = {
     'black': '#212121',
     'white': '#efffff',
     'red':   '#e06c75',
-    'purple':'#c678dd',
+    'purple': '#c678dd',
     'blue':  '#61afef',
     'green': '#98c379',
-    'yellow':'#e5c07b',
+    'yellow': '#e5c07b',
     'cyan':  '#56b6c2',
 }
 
@@ -263,7 +297,7 @@ def init_widgets_list():
         #         ),
         widget.Sep(
             linewidth=0,
-            padding=40,
+            padding=35,
             foreground=col['white'],
             background=col['bg'],
         ),
@@ -286,6 +320,12 @@ def init_widgets_list():
             threshold=90,
             padding=5
         ),
+        widget.Sep(
+            linewidth=3,
+            padding=10,
+            foreground=col['blue'],
+            background=col['bg'],
+        ),
         widget.TextBox(
             text=" ⟳",
             padding=2,
@@ -305,13 +345,12 @@ def init_widgets_list():
             #fmt = "Updates ",
             padding=5
         ),
-        # widget.TextBox(
-        #         text = "Updates",
-        #         padding = 5,
-        #         mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
-        #        foreground = colors[2],
-        #        background = colors[4]
-        #        ),
+        widget.Sep(
+            linewidth=3,
+            padding=10,
+            foreground=col['green'],
+            background=col['bg'],
+        ),
         widget.TextBox(
             text=" 🖬",
             foreground=col['white'],
@@ -326,12 +365,24 @@ def init_widgets_list():
                 'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e htop')},
             padding=5
         ),
+        widget.Sep(
+            linewidth=3,
+            padding=10,
+            foreground=col['blue'],
+            background=col['bg'],
+        ),
         widget.Net(
             interface="eno1",
             format='{down} ↓↑ {up}',
             foreground=col['white'],
             background=col['bg'],
             padding=5
+        ),
+        widget.Sep(
+            linewidth=3,
+            padding=10,
+            foreground=col['green'],
+            background=col['bg'],
         ),
         widget.TextBox(
             text=" Vol:",
@@ -343,6 +394,12 @@ def init_widgets_list():
             foreground=col['white'],
             background=col['bg'],
             padding=5
+        ),
+        widget.Sep(
+            linewidth=3,
+            padding=10,
+            foreground=col['blue'],
+            background=col['bg'],
         ),
         widget.CurrentLayoutIcon(
             custom_icon_paths=[os.path.expanduser(
@@ -357,15 +414,21 @@ def init_widgets_list():
             background=col['bg'],
             padding=5
         ),
+        widget.Sep(
+            linewidth=3,
+            padding=10,
+            foreground=col['green'],
+            background=col['bg'],
+        ),
         widget.Clock(
             foreground=col['white'],
             background=col['bg'],
-            format="%A, %B %d  [ %H:%M ]"
+            format="%A %d %B [ %H:%M ]"
         ),
         widget.Sep(
-            linewidth=0,
-            padding=5,
-            foreground=col['white'],
+            linewidth=3,
+            padding=10,
+            foreground=col['blue'],
             background=col['bg'],
         ),
         widget.Systray(

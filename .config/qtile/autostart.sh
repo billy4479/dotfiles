@@ -8,3 +8,4 @@ nm-applet &
 # pasystray &
 xfce4-clipman &
 numlockx &
+#kitty -e "zsh -c 'connect-random-vpn it tcp'"
