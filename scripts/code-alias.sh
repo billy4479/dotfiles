@@ -1,14 +1,14 @@
 #!/usr/bin/env zsh
 
-cdc(){
-	cd $code
-	if [ "$1" != "" ]; then
-		cd "$1"
-       	fi
+cdc() {
+    cd $code
+    if [ "$1" != "" ]; then
+        cd "$1"
+    fi
 }
 
 c() {
-    if [ "$1" = "" ]; then
+    if [ -z ${1+x} ]; then
         codium .
         return
     fi
@@ -38,4 +38,3 @@ goinit() {
     goinit-nogit $1
     git init
 }
-

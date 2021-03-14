@@ -3,14 +3,14 @@
 alias rb="echo 'Reloading zsh...' && source $HOME/.zshrc"
 
 rs() {
-	echo "Reloading scripts"
-	for script in `ls ${HOME}/scripts/*.sh`; do
-	       	source "$script"
-	done
+        echo "Reloading scripts"
+        for script in $(ls ${HOME}/scripts/*.sh); do
+                source "$script"
+        done
 }
 
-cds(){
-        cd "/media/billy/SSDSata/Server Minecraft"
+cds() {
+        cd "$servers"
         if [ "$1" != "" ]; then
                 cd "$1"
         fi
@@ -34,9 +34,8 @@ alias a="tmux attach -t main"
 
 alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
 
-function mkcd(){ mkdir -p "$1" && cd "$1";}
+function mkcd() { mkdir -p "$1" && cd "$1"; }
 
 #unalias c
 alias t="tmux attach"
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
