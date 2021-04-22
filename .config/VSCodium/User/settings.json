@@ -3,7 +3,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "One Dark Pro",
   "go.useLanguageServer": true,
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "FiraCode Nerd Font, Fira Code",
   "editor.fontLigatures": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -44,5 +44,32 @@
   "omnisharp.enableImportCompletion": true,
   "omnisharp.enableRoslynAnalyzers": true,
   "csharp.referencesCodeLens.enabled": false,
-  "csharpfixformat.style.spaces.beforeParenthesis": false
+  "csharpfixformat.style.spaces.beforeParenthesis": false,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "cSpell.userWords": [
+    "gorm",
+    "postgres"
+  ],
+  "sync.gist": "afff5cddf59660d6c6f909bf140cc05d",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.maxTokenizationLineLength": 200000,
+  "cmake.configureOnOpen": true,
+  "clangd.onConfigChanged": "restart",
+  "C_Cpp.intelliSenseEngine": "Disabled",
+  "go.toolsManagement.autoUpdate": true,
+  "go.lintTool": "golangci-lint",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
 }

@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 # alias git="hub"
 alias gaa="git add ."

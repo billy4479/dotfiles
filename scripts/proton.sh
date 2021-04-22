@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 proton-play() {
     # PROTON_USE_WINED3D11=1 \

@@ -1,24 +1,3 @@
-# automatically make it a tmux session
-#if [ -n "$PS1" ] &&
-#    [ -n "$DISPLAY" ] &&
-#    [[ ! "$TERM" =~ screen ]] &&
-#    [[ ! "$TERM" =~ tmux ]] &&
-#    [ -z "$TMUX" ] &&
-#    ! [ -e ~/storage/shared ] &&
-#    command -v tmux 2>&1 1>/dev/null
-#then
-#        exec tmux
-#fi
-
-colorscript random
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -29,8 +8,7 @@ export ZSH="/home/billy/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="elessar"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -39,17 +17,17 @@ ZSH_THEME="elessar"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="false"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="false"
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="false"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-DISABLE_UPDATE_PROMPT="true"
+# DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -58,7 +36,7 @@ DISABLE_UPDATE_PROMPT="true"
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-DISABLE_LS_COLORS="true"
+# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -67,7 +45,9 @@ DISABLE_LS_COLORS="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -90,51 +70,33 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker golang zsh-syntax-highlighting)
+ZSH_THEME="elessar"
+
+CASE_SENSITIVE="false"
+
+HYPHEN_INSENSITIVE="false"
+
+plugins=(zsh-syntax-highlighting)
+
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# automatically make it a tmux session
+#if [ -n "$PS1" ] &&
+#    [ -n "$DISPLAY" ] &&
+#    [[ ! "$TERM" =~ screen ]] &&
+#    [[ ! "$TERM" =~ tmux ]] &&
+#    [ -z "$TMUX" ] &&
+#    ! [ -e ~/storage/shared ] &&
+#    command -v tmux 2>&1 1>/dev/null
+#then
+#        exec tmux
+#fi
 
-# export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# Fo\r a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# kill all tmux sessions with no terminal emulator attached
-tmkill() {
-    LIST="$(tmux ls)"
-    TSESSIONS=""
-    while read -r line; do
-        if ! echo "$line" | grep 'attached'; then
-            tmux kill-session -t "$(echo $line | grep -oP '^\d\d?')"
-        fi
-    done <<<"$LIST"
-}
-
-for script in `command ls ${HOME}/scripts/zsh/*.sh`; do source "$script"; done
+for script in `command ls ${HOME}/scripts/*.sh`; do source "$script"; done
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# 
+# colorscript random
 

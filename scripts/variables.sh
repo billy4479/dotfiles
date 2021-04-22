@@ -1,13 +1,13 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 export GOPATH="/home/billy/go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/lib/dart/bin:/opt/android-studio/bin:$HOME/Android/Sdk/platform-tools:/opt/aseprite:$HOME/Android/Sdk/emulator:$HOME/.local/bin:$HOME/flutter/bin:$HOME/.cargo/bin"
 export code="/home/billy/code"
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/default"
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
-export EDITOR="mvim"
+export EDITOR="nvim"
 export servers='/mnt/SSDSata/Server Minecraft'
-export AURDIR="/mnt/HDD/yay"
+export AURDEST="/mnt/HDD/yay"
 
 # Flutter
 #export CHROME_EXECUTABLE=`which chromium`

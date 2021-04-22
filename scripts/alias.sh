@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 alias rb="echo 'Reloading zsh...' && source $HOME/.zshrc"
 
@@ -16,17 +16,27 @@ cds() {
         fi
 }
 
+# kill all tmux sessions with no terminal emulator attached
+tmkill() {
+    LIST="$(tmux ls)"
+    TSESSIONS=""
+    while read -r line; do
+        if ! echo "$line" | grep 'attached'; then
+            tmux kill-session -t "$(echo $line | grep -oP '^\d\d?')"
+        fi
+    done <<<"$LIST"
+}
+
 alias cls="clear"
 alias pg="ping 8.8.8.8"
 alias vi="vim"
 alias vim="nvim"
 alias hey="cls && neofetch"
 
-unalias ll
-unalias la
-alias ls="exa --color=auto --group-directories-first -lah"
-alias ll="ls"
-alias la="ls"
+#alias ls="exa --color=auto --group-directories-first -lah"
+alias ls="logo-ls -Ah"
+alias ll="exa --color=auto --group-directories-first -lah"
+alias la="ls -s"
 alias std-ls="/bin/ls --color=auto"
 
 alias clipcopy="tee /dev/stderr | xclip -in -selection clipboard"
@@ -34,7 +44,7 @@ alias a="tmux attach -t main"
 
 alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
 
-function mkcd() { mkdir -p "$1" && cd "$1"; }
+mkcd() { mkdir -p "$1" && cd "$1"; }
 
 #unalias c
 alias t="tmux attach"

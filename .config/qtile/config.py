@@ -3,7 +3,8 @@ import os
 import re
 import socket
 import subprocess
-from libqtile.config import KeyChord, Key, Screen, Group, Drag, Click
+from libqtile import qtile
+from libqtile.config import KeyChord, Key, Screen, Group, Drag, Click, Match
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 from libqtile.lazy import lazy
@@ -51,12 +52,20 @@ keys = [
         desc='Shutdown Qtile'
         ),
     Key([mod], "b",
-        lazy.spawn("brave --use-gl=desktop"),
+        lazy.spawn("firefox"),
         desc='Spawn a browser'
         ),
     Key([mod], "v",
         lazy.spawn("xfce4-popup-clipman"),
         desc='Clipman popup'
+        ),
+    Key([mod], "c",
+        lazy.spawn("qalculate-gtk"),
+        desc="Spawn a calculator",
+        ),
+    Key([mod], "e",
+        lazy.spawn("spacefm"),
+        desc="Spawn file manager"
         ),
     # Switch focus to specific monitor
     Key([mod], "comma",
@@ -142,29 +151,33 @@ keys = [
         ),
     # Screenshots
     Key([], "Print",
-        lazy.spawn(screenshotSelectionToClipboard),
-        desc='Screenshot selection to clipboard',
-        ),
-    Key(["shift"], "Print",
-        lazy.spawn(screenshotSelectionToFile),
-        desc='Screenshot selection to file',
-        ),
-    Key(["control"], "Print",
-        lazy.spawn(screenshotFullToClipboard),
-        desc='Screenshot fullscreen to clipboard',
-        ),
-    Key(["control", "shift"], "Print",
-        lazy.spawn(screenshotFullToFile),
-        desc='Screenshot fullscreen to file',
-        ),
-    Key(["mod1"], "Print",
-        lazy.spawn(screenshotWindowClipboard),
-        desc='Screenshot active window to clipboard',
-        ),
-    Key(["mod1", "shift"], "Print",
-        lazy.spawn(screenshotSelectionToFile),
-        desc='Screenshot active window to clipboard',
-        ),
+        lazy.spawn("/home/billy/scripts/dmenu/screenshot.sh"),
+        desc="Screenshot script with dmenu",
+        )
+#    Key([], "Print",
+#        lazy.spawn(screenshotSelectionToClipboard),
+#        desc='Screenshot selection to clipboard',
+#        ),
+#    Key(["shift"], "Print",
+#        lazy.spawn(screenshotSelectionToFile),
+#        desc='Screenshot selection to file',
+#        ),
+#    Key(["control"], "Print",
+#        lazy.spawn(screenshotFullToClipboard),
+#        desc='Screenshot fullscreen to clipboard',
+#        ),
+#    Key(["control", "shift"], "Print",
+#        lazy.spawn(screenshotFullToFile),
+#        desc='Screenshot fullscreen to file',
+#        ),
+#    Key(["mod1"], "Print",
+#        lazy.spawn(screenshotWindowClipboard),
+#        desc='Screenshot active window to clipboard',
+#        ),
+#    Key(["mod1", "shift"], "Print",
+#        lazy.spawn(screenshotSelectionToFile),
+#        desc='Screenshot active window to clipboard',
+#        ),
 ]
 
 group_names = [("WWW", {'layout': 'monadtall'}),
@@ -175,7 +188,7 @@ group_names = [("WWW", {'layout': 'monadtall'}),
                ("BG", {'layout': 'monadtall'}),
                ("DOC", {'layout': 'monadtall'}),
                ("SRV", {'layout': 'monadtall'}),
-               ("GAME", {'layout': 'floating'})]
+               ("GAME", {'layout': 'monadtall'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -198,9 +211,9 @@ col = {
     'cyan':  '#56b6c2',
 }
 
-layout_theme = {"border_width": 2,
+layout_theme = {"border_width": 1,
                 "margin": 6,
-                "border_focus": col['blue'],
+                "border_focus": col['white'],
                 "border_normal": col['bg'],
                 }
 
@@ -334,15 +347,14 @@ def init_widgets_list():
             fontsize=14
         ),
         widget.CheckUpdates(
-            distro='Arch_yay',
-            update_interval=60,
+            distro='Arch_checkupdates',
+            update_interval=1800,
             foreground=col['white'],
             background=col['bg'],
             no_update_string='No Updates',
-            execute='yay -Syu',
-            mouse_callbacks={'Button1': lambda qtile: qtile.cmd_spawn(
-                myTerm + ' -e sudo pacman -Syu')},
-            #fmt = "Updates ",
+            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
+                myTerm + ' -e yay -Syu')},
+            display_format="{updates} Updates",
             padding=5
         ),
         widget.Sep(
@@ -509,21 +521,13 @@ bring_front_click = False
 cursor_warp = False
 
 floating_layout = layout.Floating(float_rules=[
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
+    # Run the utility of `xprop` to see the wm class and name of an X client.
+    # default_float_rules include: utility, notification, toolbar, splash, dialog,
+    # file_progress, confirm, download and error.
+    *layout.Floating.default_float_rules,
+    Match(title='Qalculate!'),  # qalculate-gtk
 ])
+
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
