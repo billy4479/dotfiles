@@ -3,7 +3,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "One Dark Pro",
   "go.useLanguageServer": true,
-  "editor.fontFamily": "FiraCode Nerd Font, Fira Code",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, FiraCode Nerd Font, Fira Code",
   "editor.fontLigatures": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -71,5 +71,6 @@
     "[ ]",
     "[x]"
   ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "editor.showFoldingControls": "always"
 }

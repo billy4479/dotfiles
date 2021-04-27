@@ -8,6 +8,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 export EDITOR="nvim"
 export servers='/mnt/SSDSata/Server Minecraft'
 export AURDEST="/mnt/HDD/yay"
+export CMAKE_GENERATOR=Ninja
 
 # Flutter
 #export CHROME_EXECUTABLE=`which chromium`

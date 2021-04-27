@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 #        exec tmux
 #fi
 
-
+bindkey '^H' backward-kill-word
 
 for script in `command ls ${HOME}/scripts/*.sh`; do source "$script"; done
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
