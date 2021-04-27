@@ -1,6 +1,6 @@
 #!/bin/sh
 
-alias rb="echo 'Reloading zsh...' && source $HOME/.zshrc"
+alias rb="echo 'Reloading shell...' && source $ZDOTDIR/.zshrc"
 
 rs() {
         echo "Reloading scripts"
@@ -38,6 +38,8 @@ alias ls="exa --icons --color=auto --group-directories-first"
 alias ll="ls -lah"
 alias la="ls -a"
 alias std-ls="/bin/ls --color=auto"
+
+alias grep="grep --color=auto"
 
 alias clipcopy="tee /dev/stderr | xclip -in -selection clipboard"
 alias a="tmux attach -t main"
