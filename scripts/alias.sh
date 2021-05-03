@@ -26,6 +26,7 @@ tmkill() {
         fi
     done <<<"$LIST"
 }
+# No idea why is vim complaining about this `
 
 alias cls="clear"
 alias pg="ping 8.8.8.8"
@@ -51,3 +52,4 @@ mkcd() { mkdir -p "$1" && cd "$1"; }
 #unalias c
 alias t="tmux attach"
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias ip='ip --color=auto'

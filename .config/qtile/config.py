@@ -14,16 +14,10 @@ mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"                                 # My terminal of choice
 myConfig = "/home/billy/.config/qtile/config.py"  # The Qtile config file location
 
-myLauncher = 'j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : \' \') | sort -u)) | dmenu -h 20" --display-binary'
+# myLauncherDesktop = 'j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : \' \') | sort -u)) | dmenu -h 20" --display-binary'
 # myLauncher = "dmenu_run -h 20 -p 'Run: '"
-# myLauncher = "rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""
-
-screenshotFullToFile = 'maim /home/billy/Pictures/Screenshots/$(date +%Y-%m-%d\ %X).png'
-screenshotSelectionToFile = 'maim -s /home/billy/Pictures/Screenshots/$(date +%Y-%m-%d\ %X).png'
-screenshotWindowToFile = 'maim -i $(xdotool getactivewindow) /home/billy/Pictures/Screenshots/$(date +%Y-%m-%d\ %X).png'
-screenshotSelectionToClipboard = 'maim -s | xclip -selection clipboard -t image/png'
-screenshotFullToClipboard = 'maim -t 1 | xclip -selection clipboard -t image/png'
-screenshotWindowClipboard = 'maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png'
+myLauncherDesktop = "rofi -show drun -display-drun \"Run: \" -drun-display-format \"{name}\""
+myLauncher = "rofi -show run -display-run \"Run: \" -run-display-format \"{name}\""
 
 keys = [
     # The essentials
@@ -32,6 +26,10 @@ keys = [
         desc='Launches My Terminal'
         ),
     Key([mod, "shift"], "Return",
+        lazy.spawn(myLauncherDesktop),
+        desc='Run Launcher for .desktop files'
+        ),
+    Key([mod, "control", "shift"], "Return",
         lazy.spawn(myLauncher),
         desc='Run Launcher'
         ),
@@ -149,35 +147,11 @@ keys = [
                 'dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous'),
             desc='Sent previous signal to spotify'
         ),
-    # Screenshots
+        # Screenshots
     Key([], "Print",
         lazy.spawn("/home/billy/scripts/dmenu/screenshot.sh"),
         desc="Screenshot script with dmenu",
-        )
-#    Key([], "Print",
-#        lazy.spawn(screenshotSelectionToClipboard),
-#        desc='Screenshot selection to clipboard',
-#        ),
-#    Key(["shift"], "Print",
-#        lazy.spawn(screenshotSelectionToFile),
-#        desc='Screenshot selection to file',
-#        ),
-#    Key(["control"], "Print",
-#        lazy.spawn(screenshotFullToClipboard),
-#        desc='Screenshot fullscreen to clipboard',
-#        ),
-#    Key(["control", "shift"], "Print",
-#        lazy.spawn(screenshotFullToFile),
-#        desc='Screenshot fullscreen to file',
-#        ),
-#    Key(["mod1"], "Print",
-#        lazy.spawn(screenshotWindowClipboard),
-#        desc='Screenshot active window to clipboard',
-#        ),
-#    Key(["mod1", "shift"], "Print",
-#        lazy.spawn(screenshotSelectionToFile),
-#        desc='Screenshot active window to clipboard',
-#        ),
+        ),
 ]
 
 group_names = [("WWW", {'layout': 'monadtall'}),
@@ -199,16 +173,16 @@ for i, (name, kwargs) in enumerate(group_names, 1):
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
 
 col = {
-    'bg':    '#282c34',
-    'fg':    '#abb2bf',
-    'black': '#212121',
-    'white': '#efffff',
-    'red':   '#e06c75',
+    'bg':     '#282c34',
+    'fg':     '#abb2bf',
+    'black':  '#212121',
+    'white':  '#efffff',
+    'red':    '#e06c75',
     'purple': '#c678dd',
-    'blue':  '#61afef',
-    'green': '#98c379',
+    'blue':   '#61afef',
+    'green':  '#98c379',
     'yellow': '#e5c07b',
-    'cyan':  '#56b6c2',
+    'cyan':   '#56b6c2',
 }
 
 layout_theme = {"border_width": 1,
@@ -261,7 +235,7 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
-    font="Fira Code",
+    font="JetBrainsMono Nerd Font",
     fontsize=12,
     padding=2,
     background=col['bg']
@@ -282,7 +256,7 @@ def init_widgets_list():
         #         mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn('dmenu_run')}
         #         ),
         widget.GroupBox(
-            font="Fira Code Bold",
+            font="JetBrainsMono Nerd Font Bold",
             fontsize=9,
             margin_y=3,
             margin_x=3,
@@ -364,7 +338,7 @@ def init_widgets_list():
             background=col['bg'],
         ),
         widget.TextBox(
-            text=" 🖬",
+            text="  ",
             foreground=col['white'],
             background=col['bg'],
             padding=0,

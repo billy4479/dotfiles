@@ -49,6 +49,7 @@ bindkey '^[[1;5D' backward-word
 for script in `command ls ${HOME}/scripts/*.sh`; do source "$script"; done
 source ${HOME}/.config/zsh/all.zsh
 
+eval $(thefuck --alias)
 # Theme
 # source ${HOME}/.config/zsh/theme.zsh
 eval "$(starship init zsh)"
