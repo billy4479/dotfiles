@@ -1,6 +1,7 @@
 [user]
 	name = billy4479
 	email = giachi.ellero@gmail.com
+	signingkey = 8B13408B75BAB9B9
 [hub]
 	protocol = ssh
 [init]

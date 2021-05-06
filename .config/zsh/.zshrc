@@ -21,6 +21,8 @@ _comp_options+=(globdots)		# Include hidden files.
 # End and start of the line
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
+bindkey '^[[1;5H' beginning-of-line
+bindkey '^[[1;5F' end-of-line
 
 # Delete and backspace
 bindkey '^?' backward-delete-char
@@ -34,6 +36,16 @@ bindkey '^[[3;5~' kill-word
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 
+# Arrow Up
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+
+# Arrow Down
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+
 # automatically make it a tmux session
 #if [ -n "$PS1" ] &&
 #    [ -n "$DISPLAY" ] &&
@@ -45,6 +57,8 @@ bindkey '^[[1;5D' backward-word
 #then
 #        exec tmux
 #fi
+
+export GPG_TTY=$(tty)
 
 for script in `command ls ${HOME}/scripts/*.sh`; do source "$script"; done
 source ${HOME}/.config/zsh/all.zsh

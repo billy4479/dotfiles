@@ -62,7 +62,7 @@ keys = [
         desc="Spawn a calculator",
         ),
     Key([mod], "e",
-        lazy.spawn("spacefm"),
+        lazy.spawn("pcmanfm-qt"),
         desc="Spawn file manager"
         ),
     # Switch focus to specific monitor

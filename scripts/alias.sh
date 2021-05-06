@@ -44,6 +44,7 @@ alias grep="grep --color=auto"
 
 alias clipcopy="tee /dev/stderr | xclip -in -selection clipboard"
 alias a="tmux attach -t main"
+alias o="xdg-open"
 
 alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
 
