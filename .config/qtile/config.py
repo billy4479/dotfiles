@@ -131,23 +131,23 @@ keys = [
         lazy.layout.toggle_split(),
         desc='Toggle between split and unsplit sides of stack'
         ),
-    # Spotify keys
+    # Media keys
     Key([], "XF86AudioPlay",
             lazy.spawn(
-                'dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause'),
-            desc='Sent play/pause signal to spotify'
+                'playerctl -p spotify,%any play-pause'),
+            desc='Sent play/pause signal'
         ),
     Key([], "XF86AudioNext",
             lazy.spawn(
-                'dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next'),
-            desc='Sent next signal to spotify'
+                'playerctl -p spotify,%any next'),
+            desc='Sent next signal'
         ),
     Key([], "XF86AudioPrev",
             lazy.spawn(
-                'dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous'),
-            desc='Sent previous signal to spotify'
+                'playerctl -p spotify,%any previous'),
+            desc='Sent previous signal'
         ),
-        # Screenshots
+    # Screenshots
     Key([], "Print",
         lazy.spawn("/home/billy/scripts/dmenu/screenshot.sh"),
         desc="Screenshot script with dmenu",

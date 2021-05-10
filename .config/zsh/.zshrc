@@ -60,10 +60,9 @@ bindkey "^[[B" down-line-or-beginning-search
 
 export GPG_TTY=$(tty)
 
-for script in `command ls ${HOME}/scripts/*.sh`; do source "$script"; done
+for script in `command ls ${HOME}/scripts/shell/*.sh`; do source "$script"; done
 source ${HOME}/.config/zsh/all.zsh
 
-eval $(thefuck --alias)
 # Theme
 # source ${HOME}/.config/zsh/theme.zsh
 eval "$(starship init zsh)"

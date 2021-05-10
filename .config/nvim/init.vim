@@ -1,6 +1,8 @@
 set termguicolors
 set nocompatible
 
+set clipboard=unnamed
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
