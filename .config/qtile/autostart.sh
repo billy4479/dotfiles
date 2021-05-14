@@ -10,3 +10,4 @@ xfce4-clipman &
 numlockx &
 playerctld daemon &
 #kitty -e "zsh -c 'connect-random-vpn it tcp'"
+dunst &
