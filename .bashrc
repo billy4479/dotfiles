@@ -1,1 +1,1 @@
-for script in `command ls ${HOME}/scripts/*.sh`; do source "$script"; done
+for script in `command ls ${HOME}/scripts/shell/*.sh`; do source "$script"; done
