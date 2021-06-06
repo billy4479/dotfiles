@@ -328,7 +328,7 @@ disabled = true
 ssh_only = false
 trim_at = '.'
 format = '[$hostname]($style) in '
-style = 'green dimmed bold'
+style = 'green bold'
 disabled = false
 
 [java]
@@ -680,7 +680,7 @@ time_range = '-'
 [username]
 format = '[$user]($style)'
 style_root = 'red bold'
-style_user = 'yellow bold'
+style_user = 'blue bold'
 show_always = true
 disabled = false
 

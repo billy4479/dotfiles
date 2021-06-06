@@ -18,6 +18,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# For 'word' delimiter
+WORDCHARS=''
+
 # End and start of the line
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
@@ -59,6 +62,7 @@ bindkey "^[[B" down-line-or-beginning-search
 #fi
 
 export GPG_TTY=$(tty)
+setopt rmstarsilent
 
 for script in `command ls ${HOME}/scripts/shell/*.sh`; do source "$script"; done
 source ${HOME}/.config/zsh/all.zsh
@@ -66,3 +70,5 @@ source ${HOME}/.config/zsh/all.zsh
 # Theme
 # source ${HOME}/.config/zsh/theme.zsh
 eval "$(starship init zsh)"
+
+afetch

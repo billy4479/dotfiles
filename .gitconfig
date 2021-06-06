@@ -6,3 +6,5 @@
 	protocol = ssh
 [init]
 	defaultBranch = master
+[pull]
+	rebase = true

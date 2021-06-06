@@ -67,11 +67,11 @@ keys = [
         ),
     # Switch focus to specific monitor
     Key([mod], "comma",
-        lazy.to_screen(0),
+        lazy.to_screen(1),
         desc='Keyboard focus to monitor 1'
         ),
     Key([mod], "period",
-        lazy.to_screen(1),
+        lazy.to_screen(0),
         desc='Keyboard focus to monitor 2'
         ),
     # Window controls

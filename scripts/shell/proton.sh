@@ -6,5 +6,5 @@ proton-play() {
     # PROTON_NO_ESYNC=1 \
     DXVK_HUD=fps \
         STEAM_COMPAT_DATA_PATH="$HOME/Games/Proton" \
-        $HOME/.local/share/Steam/steamapps/common/Proton\ -\ Experimental/proton run "$1"
+        $HOME/.local/share/Steam/steamapps/common/Proton\ -\ Experimental/proton runinprefix "$1"
 }

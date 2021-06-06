@@ -19,25 +19,21 @@
     "html",
     "vue",
     "markdown",
-    "typescript"
+    "typescrypt",
+    "svelte"
   ],
   "eslint.lintTask.enable": true,
   "editor.formatOnSave": true,
-  "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "typescript",
+    "svelte"
+  ],
   "python.languageServer": "Microsoft",
   "editor.fontWeight": 500,
   "editor.fontSize": 16,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[csharp]": {
     "editor.defaultFormatter": "Leopotam.csharpfixformat"
   },
@@ -50,7 +46,9 @@
   },
   "cSpell.userWords": [
     "gorm",
+    "lzma",
     "postgres",
+    "vite",
     "youtube"
   ],
   "sync.gist": "afff5cddf59660d6c6f909bf140cc05d",
@@ -73,5 +71,22 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "editor.showFoldingControls": "always"
+  "editor.showFoldingControls": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "cSpell.enableFiletypes": [
+    "svelte"
+  ],
 }

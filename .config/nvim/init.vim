@@ -6,7 +6,7 @@ endif
 
 set nocompatible
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -18,16 +18,21 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 set encoding=utf-8
 
 source $HOME/.config/nvim/theme.vim
 source $HOME/.config/nvim/nerdtree.vim
-source $HOME/.config/nvim/fzf.vim
 
 " Disable background color to allow trasparency in alacritty
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+
+" Use ctrl-[hjkl] to select the active split
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 

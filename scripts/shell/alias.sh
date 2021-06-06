@@ -30,9 +30,12 @@ tmkill() {
 
 alias cls="clear"
 alias pg="ping 8.8.8.8"
-alias vi="vim"
+alias vi="nvim"
 alias vim="nvim"
-alias hey="cls && neofetch"
+alias o="xdg-open"
+
+alias a="tmux attach"
+alias t="tmux attach -t main"
 
 alias ls="exa --icons --color=auto --group-directories-first"
 #alias ls="logo-ls -Ah"
@@ -41,16 +44,12 @@ alias la="ls -a"
 alias std-ls="/bin/ls --color=auto"
 
 alias grep="grep --color=auto"
+alias ip='ip --color=auto'
 
 alias clipcopy="tee /dev/stderr | xclip -in -selection clipboard"
-alias a="tmux attach -t main"
-alias o="xdg-open"
+alias clippaste="xclip -out -selectioin clipboard"
 
 alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
 
 mkcd() { mkdir -p "$1" && cd "$1"; }
 
-#unalias c
-alias t="tmux attach"
-alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-alias ip='ip --color=auto'
