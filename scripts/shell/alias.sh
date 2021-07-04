@@ -51,6 +51,7 @@ alias clipcopy="tee /dev/stderr | xclip -in -selection clipboard"
 alias clippaste="xclip -out -selectioin clipboard"
 
 alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
+alias java11="/usr/lib/jvm/java-11-openjdk-amd64/jre/bin/java"
 
 mkcd() { mkdir -p "$1" && cd "$1"; }
 
