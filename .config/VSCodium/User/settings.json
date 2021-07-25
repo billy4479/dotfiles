@@ -1,14 +1,14 @@
 {
   "todo-tree.tree.showScanModeButton": false,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "One Monokai",
   "go.useLanguageServer": true,
   "editor.fontFamily": "JetBrainsMono Nerd Font, FiraCode Nerd Font, Fira Code",
   "editor.fontLigatures": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.startupEditor": "newUntitledFile",
-  "eslint.packageManager": "yarn",
+  "eslint.packageManager": "pnpm",
   "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
   "eslint.probe": [
@@ -95,4 +95,14 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "clangd.path": "/home/billy/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/12.0.0/clangd_12.0.0/bin/clangd",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }
