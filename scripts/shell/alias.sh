@@ -37,6 +37,7 @@ alias o="xdg-open"
 alias a="tmux attach"
 alias t="tmux attach -t main"
 alias ssh="TERM=xterm ssh"
+alias gotop="gotop --nvidia"
 
 alias ls="exa --icons --color=auto --group-directories-first"
 #alias ls="logo-ls -Ah"
