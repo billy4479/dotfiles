@@ -21,20 +21,9 @@ c() {
         read answer
         if [ "$answer" = "y" ]; then
             cd $code
-            git clone billy4479/$1 && cd $1 && codium .
+            git clone "git@github.com:billy4479/$1" && cd "$1" && codium .
         fi
     fi
 }
 
-goinit-nogit() {
-    if [ "$1" != "" ]; then
-        mkdir -p $1
-        cd $1
-    fi
-    go mod init github.com/billy4479/$(basename $(pwd))
-}
-
-goinit() {
-    goinit-nogit $1
-    git init
-}
+alias license='license -name "Giacomo Ellero"'

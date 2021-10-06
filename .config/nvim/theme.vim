@@ -1,10 +1,11 @@
 " Theme
-colorscheme onedark
-let g:airline_theme = 'onedark'
 
-"colorscheme material
-"let g:material_theme_style = 'darker-community'
-"let g:airline_theme = 'material'
+"ccolorscheme onedark
+"let g:airline_theme = 'onedark'
+
+colorscheme material
+let g:material_theme_style = 'palenight'
+let g:airline_theme = 'material'
 
 " Colorizer
 lua require'colorizer'.setup()

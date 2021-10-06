@@ -5,7 +5,6 @@
   "editor.fontFamily": "JetBrainsMono Nerd Font, FiraCode Nerd Font, Fira Code",
   "editor.fontLigatures": true,
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.startupEditor": "newUntitledFile",
   "eslint.packageManager": "pnpm",
   "eslint.format.enable": true,
@@ -34,19 +33,22 @@
   "editor.fontWeight": 500,
   "editor.fontSize": 16,
   "[csharp]": {
-    "editor.defaultFormatter": "Leopotam.csharpfixformat"
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
   "omnisharp.enableImportCompletion": true,
   "omnisharp.enableRoslynAnalyzers": true,
   "csharp.referencesCodeLens.enabled": false,
-  "csharpfixformat.style.spaces.beforeParenthesis": false,
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "cSpell.userWords": [
+    "cmake",
+    "fyne",
     "gorm",
     "lzma",
     "postgres",
+    "Scriptable",
+    "submodules",
     "vite",
     "youtube"
   ],
@@ -78,7 +80,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.zoomLevel": 2,
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -104,7 +105,7 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "workbench.colorTheme": "One Monokai",
+  "workbench.colorTheme": "Community Material Theme Palenight",
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
@@ -114,4 +115,12 @@
   "explorer.confirmDragAndDrop": false,
   "C_Cpp.default.cppStandard": "c++17",
   "C_Cpp.default.cStandard": "c99",
+  "omnisharp.useGlobalMono": "always",
+  "cmake.generator": "Ninja",
+  "window.zoomLevel": 2,
+  "cmake.configureArgs": [
+    "-Wno-dev"
+  ],
+  "cSpell.ignoreWords": [],
+  "editor.bracketPairColorization.enabled": true,
 }

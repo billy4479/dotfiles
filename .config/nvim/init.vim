@@ -10,15 +10,12 @@ set clipboard=unnamedplus
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'joshdick/onedark.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+" Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 
 call plug#end()
 set encoding=utf-8
