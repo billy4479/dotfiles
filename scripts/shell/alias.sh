@@ -56,3 +56,4 @@ alias java11="/usr/lib/jvm/java-11-openjdk-amd64/jre/bin/java"
 
 mkcd() { mkdir -p "$1" && cd "$1"; }
 
+alias vpn='nordvpn-server-picker -config $VPN_SERVERS -creds $VPN_SERVERS/creds.txt'
