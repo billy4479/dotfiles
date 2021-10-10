@@ -1,58 +1,7 @@
 configuration {
-	font: "JetBrainsMono Nerd Font 9";
+    font: "JetBrainsMono Nerd Font 12";
     modi: "run,drun";
-    location: 1;
-    width: 100;
-    lines: 1;
-    line-margin: 0;
-    line-padding: 1;
-    separator-style: "";
-    kb-row-select: "Tab";
-    kb-row-tab: "";
-    hide-scrollbar: true;
     show-icons: true;
-    terminal: "kitty";
-}
-
-* {
-    background-color: #282c34;
-    border-color: #282c34;
-    text-color: #abb2bf;
-}
-
-#window {
-    children: [ horibox ];
-    height: 20px;
-    padding: 0px;
-    anchor: north;
-    location: north;
-}
-
-#horibox {
-    orientation: horizontal;
-    children: [ prompt, entry, listview ];
-}
-
-#listview {
-    layout: horizontal;
-    lines: 100;
-}
-
-#entry {
-    padding: 2px;
-    expand: false;
-    width: 10em;
-}
-
-#element {
-    padding: 2px 8px;
-}
-
-#element selected {
-    background-color: #61afef;
-    text-color: #282c34;
-}
-
-#prompt {
-    padding: 2px;
+    icon-theme: "candy-icons";
+    terminal: "alacritty";
 }
