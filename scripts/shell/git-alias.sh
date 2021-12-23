@@ -10,6 +10,7 @@ alias gc="git commit"
 
 alias config="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias conf="config"
-alias confa="config add -u --patch"
+alias confa="config add"
 alias confd="config diff"
 alias confc="config commit"
+alias confu="config add -u --patch"
