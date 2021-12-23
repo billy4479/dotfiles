@@ -4,8 +4,8 @@
 # Enable colors
 autoload -U colors && colors
 
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 HISTFILE=~/.cache/zsh/history
 
 # Autocompletion

@@ -65,3 +65,5 @@
                                 "--header-insertion=never"
                                 "--header-insertion-decorators=0"))
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
+
+(add-hook 'before-save-hook #'lsp-format-buffer nil t)

@@ -30,7 +30,7 @@
     "svelte"
   ],
   "python.languageServer": "Microsoft",
-  "editor.fontWeight": 500,
+  "editor.fontWeight": 550,
   "editor.fontSize": 16,
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
@@ -46,10 +46,13 @@
     "fyne",
     "gorm",
     "lzma",
+    "minmax",
     "postgres",
+    "prefetch",
     "Scriptable",
     "submodules",
     "vite",
+    "windicss",
     "youtube"
   ],
   "sync.gist": "afff5cddf59660d6c6f909bf140cc05d",
@@ -81,7 +84,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
@@ -117,10 +120,16 @@
   "C_Cpp.default.cStandard": "c99",
   "omnisharp.useGlobalMono": "always",
   "cmake.generator": "Ninja",
-  "window.zoomLevel": 2,
   "cmake.configureArgs": [
     "-Wno-dev"
   ],
   "cSpell.ignoreWords": [],
   "editor.bracketPairColorization.enabled": true,
+  "svelte.enable-ts-plugin": true,
+  "tabnine.experimentalAutoImports": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.zoomLevel": 2,
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "css.validate": false,
 }
