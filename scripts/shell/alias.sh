@@ -32,26 +32,23 @@ alias pg="ping 8.8.8.8"
 alias vi="nvim"
 alias vim="nvim"
 alias o="xdg-open"
+alias se='sudoedit'
 
 alias a="tmux attach"
 alias t="tmux attach -t main"
 alias ssh="TERM=xterm ssh"
 alias gotop="gotop --nvidia"
 
-alias ls="exa --icons --color=auto --group-directories-first"
+alias ls="exa -a --icons --color=auto --group-directories-first"
 #alias ls="logo-ls -Ah"
-alias ll="ls -lah"
-alias la="ls -a"
-alias std-ls="/bin/ls --color=auto"
+alias ll="ls -lh"
+alias std-ls="command ls --color=auto"
 
 alias grep="grep --color=auto"
 alias ip='ip --color=auto'
 
 alias clipcopy="tee /dev/stderr | xclip -in -selection clipboard"
-alias clippaste="xclip -out -selectioin clipboard"
-
-alias java8="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
-alias java11="/usr/lib/jvm/java-11-openjdk-amd64/jre/bin/java"
+alias clippaste="xclip -out -selection clipboard"
 
 mkcd() { mkdir -p "$1" && cd "$1"; }
 

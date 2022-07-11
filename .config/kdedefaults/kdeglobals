@@ -1,8 +1,8 @@
 [General]
-ColorScheme=WhiteSurDark
+ColorScheme=ChromeOSDark
 
 [Icons]
 Theme=candy-icons
 
 [KDE]
-widgetStyle=Breeze
+widgetStyle=kvantum

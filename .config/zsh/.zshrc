@@ -33,6 +33,7 @@ bindkey '^[[3~' delete-char
 
 # Ctrl+del, ctrl+bakspace
 bindkey '^H' backward-kill-word
+#bindkey '^?' backward-kill-word
 bindkey '^[[3;5~' kill-word
 
 # Ctrl+[Right/Left]-Arrow

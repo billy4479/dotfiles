@@ -8,11 +8,15 @@ export GOPATH="/home/billy/go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/lib/dart/bin:/opt/android-studio/bin:$HOME/Android/Sdk/platform-tools:/opt/aseprite:$HOME/Android/Sdk/emulator:$HOME/.local/bin:$HOME/flutter/bin:$HOME/.cargo/bin:$HOME/.emacs.d/bin"
 export JAVA_HOME="/usr/lib/jvm/default"
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
+export npm_config_prefix="$HOME/.local"
+export CC=clang
+export CXX=clang++
 
 # Pager for Git - Disabled since it messes up with delta
 # export PAGER="bat"
 
 export EDITOR="nvim"
+export DIFFPROG="nvim -d"
 
 # App to open man pages (bat in this case)
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -35,3 +39,5 @@ export VPN_SERVERS="$HOME/NordVPN Servers"
 
 # CMake generator - disable since it messes up some projects, use -G
 # export CMAKE_GENERATOR=Ninja
+
+eval "$(antidot init)"

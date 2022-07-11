@@ -6,8 +6,8 @@
 	protocol = ssh
 [init]
 	defaultBranch = master
-[pull]
-    rebase = true
+#[pull]
+#    rebase = true
 
 [pager]
     diff = delta
@@ -26,3 +26,5 @@
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow ul
     file-decoration-style = none
+[color]
+	ui = true

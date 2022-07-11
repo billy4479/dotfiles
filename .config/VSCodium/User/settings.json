@@ -2,7 +2,7 @@
   "todo-tree.tree.showScanModeButton": false,
   "workbench.iconTheme": "material-icon-theme",
   "go.useLanguageServer": true,
-  "editor.fontFamily": "JetBrainsMono Nerd Font, FiraCode Nerd Font, Fira Code",
+  "editor.fontFamily": "JetbrainsMono Nerd Font, FiraCode Nerd Font, Fira Code, Comic Mono",
   "editor.fontLigatures": true,
   "editor.suggestSelection": "first",
   "workbench.startupEditor": "newUntitledFile",
@@ -31,7 +31,6 @@
   ],
   "python.languageServer": "Microsoft",
   "editor.fontWeight": 550,
-  "editor.fontSize": 16,
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
@@ -42,17 +41,22 @@
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "cSpell.userWords": [
+    "bindgen",
+    "ccache",
     "cmake",
     "fyne",
     "gorm",
     "lzma",
+    "Minecraft",
     "minmax",
     "postgres",
+    "precompiled",
     "prefetch",
     "Scriptable",
     "submodules",
     "vite",
     "windicss",
+    "Wireframe",
     "youtube"
   ],
   "sync.gist": "afff5cddf59660d6c6f909bf140cc05d",
@@ -116,13 +120,10 @@
     "editor.defaultFormatter": "xaver.clang-format"
   },
   "explorer.confirmDragAndDrop": false,
-  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.cppStandard": "c++20",
   "C_Cpp.default.cStandard": "c99",
   "omnisharp.useGlobalMono": "always",
   "cmake.generator": "Ninja",
-  "cmake.configureArgs": [
-    "-Wno-dev"
-  ],
   "cSpell.ignoreWords": [],
   "editor.bracketPairColorization.enabled": true,
   "svelte.enable-ts-plugin": true,
@@ -132,4 +133,15 @@
   "javascript.preferences.importModuleSpecifier": "relative",
   "typescript.preferences.importModuleSpecifier": "relative",
   "css.validate": false,
+  "go.formatFlags": [
+    "-s"
+  ],
+  "clangd.arguments": [
+    "-header-insertion=never"
+  ],
+  "redhat.telemetry.enabled": false,
+  "customizeUI.font.regular": "JetbrainsMono Nerd Font",
+  "customizeUI.font.monospace": "JetbrainsMono Nerd Font",
+  "editor.fontSize": 16,
+  "Lua.telemetry.enable": false,
 }

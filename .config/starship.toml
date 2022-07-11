@@ -56,8 +56,8 @@ $time\
 $status\
 $shell\
 $character"""
-scan_timeout = 10
-command_timeout = 0
+scan_timeout = 1000
+command_timeout = 1000
 add_newline = false
 
 [aws]
