@@ -11,7 +11,7 @@ from libqtile.lazy import lazy
 from typing import List  # noqa: F401
 
 mod = "mod4"                                      # Sets mod key to SUPER/WINDOWS
-myTerm = "kitty"                                  # My terminal of choice
+myTerm = "alacritty"                              # My terminal of choice
 myConfig = "/home/billy/.config/qtile/config.py"  # The Qtile config file location
 
 # myLauncherDesktop = 'j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : \' \') | sort -u)) | dmenu -h 20" --display-binary'
@@ -50,7 +50,7 @@ keys = [
         desc='Shutdown Qtile'
         ),
     Key([mod], "b",
-        lazy.spawn("firefox"),
+        lazy.spawn("librewolf"),
         desc='Spawn a browser'
         ),
     Key([mod], "v",
@@ -60,6 +60,10 @@ keys = [
     Key([mod], "c",
         lazy.spawn("qalculate-gtk"),
         desc="Spawn a calculator",
+        ),
+    Key([mod, "shift"], "l",
+        lazy.spawn("dm-tool lock"),
+        desc="Lock"
         ),
     Key([mod], "e",
         lazy.spawn("pcmanfm-qt"),

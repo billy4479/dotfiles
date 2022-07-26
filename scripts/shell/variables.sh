@@ -9,8 +9,8 @@ export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/lib/dart/bin:/opt/android-
 export JAVA_HOME="/usr/lib/jvm/default"
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 export npm_config_prefix="$HOME/.local"
-export CC=clang
-export CXX=clang++
+#export CC=clang
+#export CXX=clang++
 
 # Pager for Git - Disabled since it messes up with delta
 # export PAGER="bat"
