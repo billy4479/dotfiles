@@ -415,22 +415,24 @@ def init_widgets_list():
             background=col['bg'],
             format="%A %d %B [ %H:%M ]"
         ),
-        widget.Sep(
-            linewidth=3,
-            padding=10,
-            foreground=col['blue'],
-            background=col['bg'],
-        ),
-        widget.Systray(
-            background=col['bg'],
-            padding=5
-        ),
-    ]
+   ]
     return widgets_list
 
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
+    sep = widget.Sep(
+            linewidth=3,
+            padding=10,
+            foreground=col['blue'],
+            background=col['bg'],
+    )
+    tray = widget.Systray(
+            background=col['bg'],
+            padding=5,
+    )
+    widgets_screen1.append(sep)
+    widgets_screen1.append(tray)
     return widgets_screen1
 
 
