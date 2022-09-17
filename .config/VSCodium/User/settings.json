@@ -54,6 +54,7 @@
     "prefetch",
     "Scriptable",
     "submodules",
+    "sveltekit",
     "vite",
     "windicss",
     "Wireframe",

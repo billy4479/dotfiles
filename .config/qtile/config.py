@@ -309,7 +309,8 @@ def init_widgets_list():
             foreground=col['white'],
             background=col['bg'],
             threshold=90,
-            padding=5
+            padding=5,
+            tag_sensor="Tctl"
         ),
         widget.Sep(
             linewidth=3,
