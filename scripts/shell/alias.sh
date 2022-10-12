@@ -53,3 +53,5 @@ alias clippaste="xclip -out -selection clipboard"
 mkcd() { mkdir -p "$1" && cd "$1"; }
 
 vpn() { eval `nordvpn-server-picker -config $VPN_SERVERS -creds $VPN_SERVERS/creds.txt $@`; }
+
+sus() { systemctl suspend && sleep 10 && sudo systemctl restart create_ap.service }

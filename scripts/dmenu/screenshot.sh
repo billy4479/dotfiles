@@ -1,41 +1,31 @@
 #!/bin/sh
 
-screnshot() {
+sel="Selection"
+full="Fullscreen"
+win="Window"
+
+screenshot() {
     read mode
 
+    local save_path="$HOME/Pictures/Screenshots"
+    mkdir -p "$save_path"
+
+    local name="$(date +%Y-%m-%d\ %H:%M:%S).png"
+    local path="$save_path/$name"
+
     case "$mode" in
-
-    "Selection to Clip")
-        maim -s | xclip -selection clipboard -t image/png
+    $sel)
+        maim -u -s | tee "$path" | xclip -selection clipboard -t image/png
         ;;
 
-    "Fullscreen to Clip")
-        maim -t 1 | xclip -selection clipboard -t image/png
+    $full)
+        maim -t 1 | tee "$path" | xclip -selection clipboard -t image/png
         ;;
 
-    "Window to Clip")
-        maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-        ;;
-
-    "Selection to File")
-        maim -s "/home/billy/Pictures/Screenshots/$(date +%Y-%m-%d\ %X).png"
-        ;;
-
-    "Fullscreen To File")
-        maim "/home/billy/Pictures/Screenshots/$(date +%Y-%m-%d\ %X).png"
-        ;;
-
-    "Window to File")
-        maim -i $(xdotool getactivewindow) "/home/billy/Pictures/Screenshots/$(date +%Y-%m-%d\ %X).png"
+    $win)
+        maim -u -i $(xdotool getactivewindow) | tee "$path" | xclip -selection clipboard -t image/png
         ;;
     esac
 }
 
-echo -n "\
-Selection to Clip
-Fullscreen to Clip
-Window to Clip
-Selection to File
-Fullscreen To File
-Window to File
-" | dmenu -h 20 | screnshot
+echo -e "$sel\n$full\n$win" | dmenu -h 20 | screenshot
