@@ -46,6 +46,7 @@
     "cmake",
     "fyne",
     "gorm",
+    "keypair",
     "lzma",
     "Minecraft",
     "minmax",
