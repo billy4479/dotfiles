@@ -8,3 +8,8 @@ proton-play() {
         STEAM_COMPAT_DATA_PATH="$HOME/Games/Proton" \
         $HOME/.local/share/Steam/steamapps/common/Proton\ -\ Experimental/proton runinprefix "$1"
 }
+
+proton-ge-play() {
+    STEAM_COMPAT_DATA_PATH="$HOME/Games/Proton-GE" \
+        /usr/share/steam/compatibilitytools.d/proton-ge-custom/proton runinprefix $@
+}
