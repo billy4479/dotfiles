@@ -113,7 +113,7 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Catppuccin Frappé",
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
@@ -145,4 +145,8 @@
   "customizeUI.font.monospace": "JetbrainsMono Nerd Font",
   "editor.fontSize": 16,
   "Lua.telemetry.enable": false,
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "catppuccin.accentColor": "green",
 }

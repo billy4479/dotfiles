@@ -4,8 +4,10 @@ export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 
+
+export PNPM_HOME="/home/billy/.local/share/pnpm"
 export GOPATH="/home/billy/go"
-export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/lib/dart/bin:/opt/android-studio/bin:$HOME/Android/Sdk/platform-tools:/opt/aseprite:$HOME/Android/Sdk/emulator:$HOME/.local/bin:$HOME/flutter/bin:$HOME/.cargo/bin:$HOME/.emacs.d/bin:$HOME/Games/bin"
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/lib/dart/bin:/opt/android-studio/bin:$HOME/Android/Sdk/platform-tools:/opt/aseprite:$HOME/Android/Sdk/emulator:$HOME/.local/bin:$HOME/flutter/bin:$HOME/.cargo/bin:$HOME/.emacs.d/bin:$HOME/Games/bin:$PNPM_HOME"
 export JAVA_HOME="/usr/lib/jvm/default"
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 export npm_config_prefix="$HOME/.local"

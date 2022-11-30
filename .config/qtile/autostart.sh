@@ -1,7 +1,7 @@
 #!/bin/sh 
 # mount /mnt/NAS &
 lxsession &
-picom --experimental-backends --xrender-sync-fence &
+picom &
 nitrogen --restore &
 redshift &
 nm-applet &

@@ -176,17 +176,30 @@ for i, (name, kwargs) in enumerate(group_names, 1):
     # Send current window to another group
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
 
+#col = {
+#    'bg':     '#282c34',
+#    'fg':     '#abb2bf',
+#    'black':  '#212121',
+#    'white':  '#efffff',
+#    'red':    '#e06c75',
+#    'purple': '#c678dd',
+#    'blue':   '#61afef',
+#    'green':  '#98c379',
+#    'yellow': '#e5c07b',
+#    'cyan':   '#56b6c2',
+#}
+
 col = {
-    'bg':     '#282c34',
-    'fg':     '#abb2bf',
-    'black':  '#212121',
-    'white':  '#efffff',
-    'red':    '#e06c75',
-    'purple': '#c678dd',
-    'blue':   '#61afef',
-    'green':  '#98c379',
-    'yellow': '#e5c07b',
-    'cyan':   '#56b6c2',
+    'bg':     '#303446',
+    'fg':     '#c6d0f5',
+    'black':  '#232634',
+    'white':  '#c6d0f5',
+    'red':    '#e78284',
+    'purple': '#ca9ee6',
+    'blue':   '#8caaee',
+    'green':  '#a6d189',
+    'yellow': '#e5c890',
+    'cyan':   '#81c8be',
 }
 
 layout_theme = {"border_width": 1,
@@ -260,8 +273,8 @@ def init_widgets_list():
         #         mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn('dmenu_run')}
         #         ),
         widget.GroupBox(
-            font="JetBrainsMono Nerd Font Bold",
-            fontsize=9,
+            font="Ubuntu Bold",
+            fontsize=10,
             margin_y=3,
             margin_x=3,
             padding_y=7,
@@ -272,7 +285,7 @@ def init_widgets_list():
             rounded=False,
             highlight_color=col['bg'],
             highlight_method="line",
-            this_current_screen_border=col['red'],
+            this_current_screen_border=col['green'],
             this_screen_border=col['blue'],
             other_current_screen_border=col['bg'],
             other_screen_border=col['bg'],

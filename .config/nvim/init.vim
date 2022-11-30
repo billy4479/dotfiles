@@ -10,10 +10,12 @@ set clipboard=unnamedplus
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+" Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 " Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'sheerun/vim-polyglot'
 

@@ -1,11 +1,14 @@
 " Theme
 
-"ccolorscheme onedark
+"colorscheme onedark
 "let g:airline_theme = 'onedark'
 
-colorscheme material
-let g:material_theme_style = 'palenight'
-let g:airline_theme = 'material'
+"colorscheme material
+"let g:material_theme_style = 'palenight'
+"let g:airline_theme = 'material'
+
+colorscheme catppuccin_frappe
+let g:lightline = {'colorscheme': 'catppuccin_frappe'}
 
 " Colorizer
 lua require'colorizer'.setup()
