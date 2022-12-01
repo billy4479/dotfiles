@@ -1,8 +1,8 @@
 [General]
-ColorScheme=ChromeOSDark
+ColorScheme=WhiteSurDark
 
 [Icons]
-Theme=candy-icons
+Theme=WhiteSur-dark
 
 [KDE]
 widgetStyle=kvantum

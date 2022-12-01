@@ -46,6 +46,7 @@
     "cmake",
     "fyne",
     "gorm",
+    "HWND",
     "keypair",
     "lzma",
     "Minecraft",
@@ -107,7 +108,7 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "clangd.path": "/home/billy/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/14.0.3/clangd_14.0.3/bin/clangd",
+  "clangd.path": "/home/billy/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/15.0.3/clangd_15.0.3/bin/clangd",
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -150,4 +151,5 @@
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.inlayHints.parameterHints.enable": false,
   "catppuccin.accentColor": "green",
+  "clangd.checkUpdates": true,
 }

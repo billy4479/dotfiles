@@ -28,4 +28,4 @@ screenshot() {
     esac
 }
 
-echo -e "$sel\n$full\n$win" | dmenu -h 20 | screenshot
+echo -e "$sel\n$full\n$win" | rofi -dmenu | screenshot

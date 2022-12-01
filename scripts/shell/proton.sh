@@ -13,3 +13,4 @@ proton-ge-play() {
     STEAM_COMPAT_DATA_PATH="$HOME/Games/Proton-GE" \
         /usr/share/steam/compatibilitytools.d/proton-ge-custom/proton runinprefix $@
 }
+

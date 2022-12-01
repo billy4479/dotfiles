@@ -7,5 +7,6 @@ LayoutName=org.kde.breeze.desktop
 Placement=Centered
 
 [org.kde.kdecoration2]
+NoPlugin=false
 library=org.kde.kwin.aurorae
-theme=__aurorae__svg__Sweet-Dark
+theme=__aurorae__svg__WhiteSur-dark
