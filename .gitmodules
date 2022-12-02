@@ -13,3 +13,9 @@
 [submodule "src/catppuccin/btop"]
 	path = src/catppuccin/btop
 	url = https://github.com/catppuccin/btop
+[submodule "src/catppuccin/joplin"]
+	path = src/catppuccin/joplin
+	url = git@github.com:billy4479/joplin.git
+[submodule "src/catppuccin/st"]
+	path = src/catppuccin/st
+	url = https://github.com/catppuccin/st
