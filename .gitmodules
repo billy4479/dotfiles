@@ -25,3 +25,6 @@
 [submodule "src/catppuccin/cursors"]
 	path = src/catppuccin/cursors
 	url = https://github.com/catppuccin/cursors
+[submodule "src/yay"]
+	path = src/yay
+	url = https://aur.archlinux.org/yay.git
