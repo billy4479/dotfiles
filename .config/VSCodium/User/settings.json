@@ -2,7 +2,7 @@
   "todo-tree.tree.showScanModeButton": false,
   "workbench.iconTheme": "material-icon-theme",
   "go.useLanguageServer": true,
-  "editor.fontFamily": "JetbrainsMono Nerd Font, FiraCode Nerd Font, Fira Code, Comic Mono",
+  "editor.fontFamily": "FiraCode Nerd Font, JetbrainsMono Nerd Font, Fira Code, Comic Mono",
   "editor.fontLigatures": true,
   "editor.suggestSelection": "first",
   "workbench.startupEditor": "newUntitledFile",
@@ -108,7 +108,7 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "clangd.path": "/home/billy/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/15.0.3/clangd_15.0.3/bin/clangd",
+  "clangd.path": "/usr/bin/clangd",
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -151,5 +151,4 @@
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.inlayHints.parameterHints.enable": false,
   "catppuccin.accentColor": "green",
-  "clangd.checkUpdates": true,
 }

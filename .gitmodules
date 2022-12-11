@@ -19,3 +19,9 @@
 [submodule "src/catppuccin/st"]
 	path = src/catppuccin/st
 	url = https://github.com/catppuccin/st
+[submodule "src/catppuccin/helix"]
+	path = src/catppuccin/helix
+	url = https://github.com/catppuccin/helix
+[submodule "src/catppuccin/cursors"]
+	path = src/catppuccin/cursors
+	url = https://github.com/catppuccin/cursors

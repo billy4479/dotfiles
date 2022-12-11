@@ -4,7 +4,7 @@ alias rb="echo 'Reloading shell...' && source $ZDOTDIR/.zshrc"
 
 rs() {
         echo "Reloading scripts"
-        for script in $(ls ${HOME}/scripts/*.sh); do
+        for script in $(command ls ${HOME}/scripts/shell/*.sh); do
                 source "$script"
         done
 }
@@ -52,6 +52,7 @@ alias clippaste="xclip -out -selection clipboard"
 
 mkcd() { mkdir -p "$1" && cd "$1"; }
 
-vpn() { eval `nordvpn-server-picker -config $VPN_SERVERS -creds $VPN_SERVERS/creds.txt $@`; }
-
 alias sus="systemctl suspend"
+
+alias ffprobe="ffprobe -hide_banner"
+alias ffmpeg="ffmpeg -hide_banner"
