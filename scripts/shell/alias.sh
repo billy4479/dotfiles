@@ -2,29 +2,33 @@
 
 alias rb="echo 'Reloading shell...' && source $ZDOTDIR/.zshrc"
 
+session-type() {
+	loginctl show-session $(loginctl | grep $USER | awk '{print $1}') -p Type | awk -F= '{print $2}'
+}
+
 rs() {
-        echo "Reloading scripts"
-        for script in $(command ls ${HOME}/scripts/shell/*.sh); do
-                source "$script"
-        done
+	echo "Reloading scripts"
+	for script in $(ls ${HOME}/scripts/*.sh); do
+		source "$script"
+	done
 }
 
 cds() {
-        cd "$servers"
-        if [ "$1" != "" ]; then
-                cd "$1"
-        fi
+	cd "$servers"
+	if [ "$1" != "" ]; then
+		cd "$1"
+	fi
 }
 
 # kill all tmux sessions with no terminal emulator attached
 tmkill() {
-    LIST="$(tmux ls)"
-    TSESSIONS=""
-    while read -r line; do
-        if ! echo "$line" | grep 'attached'; then
-            tmux kill-session -t "$(echo $line | grep -oP '^\d\d?')"
-        fi
-    done <<<"$LIST"
+	LIST="$(tmux ls)"
+	TSESSIONS=""
+	while read -r line; do
+		if ! echo "$line" | grep 'attached'; then
+			tmux kill-session -t "$(echo $line | grep -oP '^\d\d?')"
+		fi
+	done <<<"$LIST"
 }
 
 alias cls="clear"
