@@ -35,6 +35,7 @@ alias cls="clear"
 alias pg="ping 8.8.8.8"
 alias vi="nvim"
 alias vim="nvim"
+alias hx="helix"
 alias o="xdg-open"
 alias se='sudoedit'
 

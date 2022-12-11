@@ -6,7 +6,9 @@ autoload -U colors && colors
 
 HISTSIZE=100000
 SAVEHIST=100000
-HISTFILE=~/.cache/zsh/history
+
+# Let antidot take care of it
+# HISTFILE=~/.cache/zsh/history
 
 # Autocompletion
 autoload -U compinit && compinit -u

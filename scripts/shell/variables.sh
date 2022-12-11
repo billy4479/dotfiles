@@ -18,7 +18,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # Pager for Git - Disabled since it messes up with delta
 # export PAGER="bat"
 
-export EDITOR="nvim"
+export EDITOR="helix"
 export DIFFPROG="nvim -d"
 
 # App to open man pages (bat in this case)
@@ -44,3 +44,6 @@ export VPN_SERVERS="$HOME/NordVPN Servers"
 # export CMAKE_GENERATOR=Ninja
 
 eval "$(antidot init)"
+
+HISTDIR=${HISTFILE%/*}
+mkdir -p "$HISTDIR"
