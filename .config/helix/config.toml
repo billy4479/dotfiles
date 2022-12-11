@@ -1,0 +1,22 @@
+theme = "catppuccin_frappe"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+bufferline = "always"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[keys.insert]
+C-backspace = "delete_word_backward"
+C-right = "move_next_word_start"
+C-left = "move_prev_word_start"
+
+
