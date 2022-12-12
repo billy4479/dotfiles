@@ -3,5 +3,5 @@ configuration {
     modi: "run,drun";
     show-icons: true;
     icon-theme: "candy-icons";
-    terminal: "alacritty";
+    terminal: "kitty";
 }
