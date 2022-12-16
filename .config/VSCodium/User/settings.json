@@ -67,7 +67,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.maxTokenizationLineLength": 200000,
-  "cmake.configureOnOpen": true,
+  "cmake.configureOnOpen": false,
   "clangd.onConfigChanged": "restart",
   "C_Cpp.intelliSenseEngine": "Disabled",
   "go.toolsManagement.autoUpdate": true,
@@ -156,3 +156,4 @@
     "editor.defaultFormatter": "redhat.java"
   },
 }
+
