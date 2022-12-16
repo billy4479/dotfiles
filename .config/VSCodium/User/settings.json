@@ -151,4 +151,8 @@
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.inlayHints.parameterHints.enable": false,
   "catppuccin.accentColor": "green",
+  "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
 }
