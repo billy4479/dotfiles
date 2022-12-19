@@ -28,3 +28,6 @@
 [submodule "src/yay"]
 	path = src/yay
 	url = https://aur.archlinux.org/yay.git
+[submodule "src/Firefox-UI-Fix"]
+	path = src/Firefox-UI-Fix
+	url = https://github.com/black7375/Firefox-UI-Fix
