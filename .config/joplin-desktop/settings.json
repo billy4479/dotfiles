@@ -34,7 +34,7 @@
 	"windowContentZoomFactor": 140,
 	"theme": 2,
 	"editor.codeView": true,
-	"style.editor.fontSize": 18,
+	"style.editor.fontSize": 16,
 	"notes.sortOrder.field": "user_updated_time",
 	"notes.sortOrder.reverse": true,
 	"style.editor.contentMaxWidth": 600,
