@@ -8,7 +8,7 @@ session-type() {
 
 rs() {
 	echo "Reloading scripts"
-	for script in $(ls ${HOME}/scripts/*.sh); do
+	for script in $(command ls ${HOME}/scripts/shell/*.sh); do
 		source "$script"
 	done
 }

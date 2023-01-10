@@ -19,7 +19,7 @@
 			{
 				"key": "noteList",
 				"width": 233,
-				"visible": true
+				"visible": false
 			},
 			{
 				"key": "editor",
@@ -29,7 +29,7 @@
 		"visible": true
 	},
 	"noteVisiblePanes": [
-		"editor"
+		"viewer"
 	],
 	"windowContentZoomFactor": 140,
 	"theme": 2,
@@ -39,5 +39,8 @@
 	"notes.sortOrder.reverse": true,
 	"style.editor.contentMaxWidth": 600,
 	"editor": "codium",
-	"trackLocation": false
+	"trackLocation": false,
+	"spellChecker.languages": [
+		"it"
+	]
 }

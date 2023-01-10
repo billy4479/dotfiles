@@ -1,0 +1,26 @@
+@import "frappe.css";
+
+* {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-family: 'FiraCode Nerd Font';
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+button, #clock, #memory, #cpu, #tray, #custom-launcher, #network {
+    margin-right: 15px;
+}
+
+#custom-launcher {
+    margin-left: 15px;
+    font-size: x-large;
+}
+
+button {
+    background-color: @green;
+    font-size: x-large;
+    color: @base;
+}

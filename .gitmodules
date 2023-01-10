@@ -31,3 +31,9 @@
 [submodule "src/Firefox-UI-Fix"]
 	path = src/Firefox-UI-Fix
 	url = https://github.com/black7375/Firefox-UI-Fix
+[submodule "src/catppuccin/waybar"]
+	path = src/catppuccin/waybar
+	url = https://github.com/catppuccin/waybar
+[submodule "src/catppuccin/hyprland"]
+	path = src/catppuccin/hyprland
+	url = https://github.com/catppuccin/hyprland

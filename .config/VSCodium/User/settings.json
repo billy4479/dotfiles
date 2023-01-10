@@ -155,5 +155,5 @@
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
+  "editor.largeFileOptimizations": false,
 }
-

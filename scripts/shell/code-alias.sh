@@ -1,10 +1,10 @@
 #!/bin/sh
 
 cdc() {
-    cd $code
-    if [ "$1" != "" ]; then
-        cd "$1"
-    fi
+	cd $code
+	if [ "$1" != "" ]; then
+		cd "$1"
+	fi
 }
 
 #c() {
@@ -26,6 +26,10 @@ cdc() {
 #	fi
 #}
 
-alias c=codium
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+	alias c="codium --enable-features=UseOzonePlatform --ozone-platform=wayland"
+else
+	alias c=codium
+fi
 
 alias license='license -name "Giacomo Ellero"'
