@@ -40,6 +40,8 @@
 	"style.editor.contentMaxWidth": 600,
 	"editor": "codium",
 	"trackLocation": false,
+	"markdown.plugin.sub": false,
+	"markdown.plugin.sup": false,
 	"spellChecker.languages": [
 		"it"
 	]

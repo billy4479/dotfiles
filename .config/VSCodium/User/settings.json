@@ -20,7 +20,6 @@
     "typescrypt",
     "svelte"
   ],
-  "eslint.lintTask.enable": true,
   "editor.formatOnSave": true,
   "eslint.validate": [
     "javascript",
@@ -155,5 +154,14 @@
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
-  "editor.largeFileOptimizations": false,
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders",
+    "joplin-desktop"
+  ],
+  "eslint.lintTask.enable": true,
 }
