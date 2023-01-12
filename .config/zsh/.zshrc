@@ -7,6 +7,16 @@ autoload -U colors && colors
 HISTSIZE=100000
 SAVEHIST=100000
 
+# Thanks to https://github.com/bttger/my-zsh/blob/main/.zshrc
+
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt INC_APPEND_HISTORY
+
 # Let antidot take care of it
 # HISTFILE=~/.cache/zsh/history
 
@@ -23,24 +33,15 @@ _comp_options+=(globdots)		# Include hidden files.
 # For 'word' delimiter
 WORDCHARS=''
 
-# End and start of the line
-bindkey '^[[H' beginning-of-line
-bindkey '^[[F' end-of-line
-bindkey '^[[1;5H' beginning-of-line
-bindkey '^[[1;5F' end-of-line
-
-# Delete and backspace
-bindkey '^?' backward-delete-char
-bindkey '^[[3~' delete-char
-
-# Ctrl+del, ctrl+bakspace
-bindkey '^H' backward-kill-word
-#bindkey '^?' backward-kill-word
-bindkey '^[[3;5~' kill-word
-
-# Ctrl+[Right/Left]-Arrow
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
+bindkey "^[[H" beginning-of-line # HOME
+bindkey "^[[F" end-of-line # END
+bindkey "^[[3~" delete-char # DEL
+bindkey "^[[3;5~" delete-word # CTRL+DEL - delete a whole word after cursor
+bindkey "^H" backward-delete-word # CTRL+BACKSPACE - delete a whole word before cursor
+bindkey "^[[1;5C" forward-word # CTRL+ARROW_RIGHT - move cursor forward one word
+bindkey "^[[1;5D" backward-word # CTRL+ARROW_LEFT - move cursor backward one word
+bindkey "^Z" undo # CTRL+Z
+bindkey "^Y" redo # CTRL+Y
 
 # Arrow Up
 autoload -U up-line-or-beginning-search
