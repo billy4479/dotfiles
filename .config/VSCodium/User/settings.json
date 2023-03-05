@@ -28,7 +28,7 @@
     "typescript",
     "svelte"
   ],
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Default",
   "editor.fontWeight": 550,
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
@@ -43,6 +43,7 @@
     "bindgen",
     "ccache",
     "cmake",
+    "egui",
     "fyne",
     "gorm",
     "HWND",
@@ -57,7 +58,9 @@
     "submodules",
     "sveltekit",
     "vite",
+    "wgpu",
     "windicss",
+    "winit",
     "Wireframe",
     "youtube"
   ],
@@ -87,10 +90,10 @@
     "postcss": "css"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
