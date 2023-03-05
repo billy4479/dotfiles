@@ -10,4 +10,5 @@ numlockx &
 playerctld daemon &
 dunst &
 kdeconnect-indicator &
+blueman-applet &
 

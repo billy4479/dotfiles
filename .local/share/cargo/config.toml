@@ -1,0 +1,10 @@
+
+[build]
+rustflags = ["-C", "target-cpu=native"]
+
+[profile.release]
+lto = true
+debug = false
+opt-level = 3
+strip = true
+

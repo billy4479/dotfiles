@@ -46,6 +46,7 @@
     "egui",
     "fyne",
     "gorm",
+    "hasher",
     "HWND",
     "keypair",
     "lzma",
@@ -167,4 +168,8 @@
     "joplin-desktop"
   ],
   "eslint.lintTask.enable": true,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "svelte.plugin.svelte.compilerWarnings": {
+    "a11y-click-events-have-key-events": "ignore"
+  },
 }
