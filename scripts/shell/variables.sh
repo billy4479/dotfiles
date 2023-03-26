@@ -19,7 +19,7 @@ export GOPROXY="direct"
 # Pager for Git - Disabled since it messes up with delta
 # export PAGER="bat"
 
-export EDITOR="helix"
+export EDITOR="nvim"
 export DIFFPROG="nvim -d"
 
 # App to open man pages (bat in this case)
@@ -42,7 +42,7 @@ export VPN_SERVERS="$HOME/NordVPN Servers"
 # export AURDEST="/mnt/HDD/yay"
 
 # CMake generator - disable since it messes up some projects, use -G
-# export CMAKE_GENERATOR=Ninja
+export CMAKE_GENERATOR=Ninja
 
 eval "$(antidot init)"
 

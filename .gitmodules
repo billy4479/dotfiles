@@ -37,3 +37,9 @@
 [submodule "src/catppuccin/hyprland"]
 	path = src/catppuccin/hyprland
 	url = https://github.com/catppuccin/hyprland
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/AstroNvim/AstroNvim
+[submodule "src/AstroNvim"]
+	path = src/AstroNvim
+	url = https://github.com/AstroNvim/AstroNvim.git
