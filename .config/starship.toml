@@ -70,62 +70,62 @@ disabled = false
 
 [battery]
 format = "[$symbol $percentage]($style) "
-full_symbol = ''
-charging_symbol = ''
-unknown_symbol = ''
-empty_symbol = ''
-discharging_symbol = ''
+full_symbol = '󰁹'
+charging_symbol = '󰂄'
+unknown_symbol = '󰂑'
+empty_symbol = '󰁺'
+discharging_symbol = '󱟟'
 disabled = false
 
 [[battery.display]]
 threshold = 10
 style = 'bold red'
-discharging_symbol = ''
+discharging_symbol = '󰁺'
 
 [[battery.display]]
 threshold = 20
 style = 'bold red'
-discharging_symbol = ''
+discharging_symbol = '󰁻'
 
 [[battery.display]]
 threshold = 30
 style = 'bold yellow'
-discharging_symbol = ''
+discharging_symbol = '󰁼'
 
 [[battery.display]]
 threshold = 40
 style = 'bold yellow'
-discharging_symbol = ''
+discharging_symbol = '󰁽'
 
 [[battery.display]]
 threshold = 50
 style = 'bold green'
-discharging_symbol = ''
+discharging_symbol = '󰁾'
 
 [[battery.display]]
 threshold = 60
 style = 'bold green'
-discharging_symbol = ''
+discharging_symbol = '󰁿'
 
 [[battery.display]]
 threshold = 70
 style = 'bold green'
-discharging_symbol = ''
+discharging_symbol = '󰂀'
 
 [[battery.display]]
 threshold = 80
 style = 'bold green'
-discharging_symbol = ''
+discharging_symbol = '󰂁'
 
 [[battery.display]]
 threshold = 90
 style = 'bold green'
-discharging_symbol = ''
+discharging_symbol = '󰂂'
 
 [[battery.display]]
 threshold = 100
 style = 'bold green'
-discharging_symbol = ''
+discharging_symbol = '󰁹'
 
 [character]
 format = '$symbol '

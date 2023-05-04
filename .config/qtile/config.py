@@ -356,7 +356,7 @@ def init_widgets_list():
             background=col['bg'],
         ),
         widget.TextBox(
-            text="  ",
+            text=" 󰍛 ",
             foreground=col['white'],
             background=col['bg'],
             padding=0,
