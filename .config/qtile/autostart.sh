@@ -2,7 +2,7 @@
 # mount /mnt/NAS &
 lxsession &
 picom &
-nitrogen --restore &
+(sleep 1 && nitrogen --restore) &
 redshift &
 nm-applet &
 xfce4-clipman &

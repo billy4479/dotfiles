@@ -43,6 +43,8 @@
 	"markdown.plugin.sub": false,
 	"markdown.plugin.sup": false,
 	"spellChecker.languages": [
-		"it"
+		"it",
+		"en-US",
+		"it-IT"
 	]
 }
