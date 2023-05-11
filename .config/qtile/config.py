@@ -543,4 +543,5 @@ def start_once():
 wmname = "LG3D"
 
 os.environ["XDG_SESSION_DESKTOP"] = "qtile"
+os.environ["QT_QPA_PLATFORMTHEME"] = "qt5ct"
 

@@ -1,6 +1,6 @@
 {
   "todo-tree.tree.showScanModeButton": false,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "catppuccin-frappe",
   "go.useLanguageServer": true,
   "editor.fontFamily": "FiraCode Nerd Font, JetbrainsMono Nerd Font, Fira Code, Comic Mono",
   "editor.fontLigatures": true,
