@@ -520,6 +520,7 @@ floating_layout = layout.Floating(float_rules=[
     # file_progress, confirm, download and error.
     *layout.Floating.default_float_rules,
     Match(title='Qalculate!'),  # qalculate-gtk
+    Match(wm_class="mc-oxide"),
 ])
 
 auto_fullscreen = True

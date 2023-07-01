@@ -66,9 +66,6 @@
     "youtube"
   ],
   "sync.gist": "afff5cddf59660d6c6f909bf140cc05d",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.maxTokenizationLineLength": 200000,
   "cmake.configureOnOpen": false,
   "clangd.onConfigChanged": "restart",
@@ -91,7 +88,7 @@
     "postcss": "css"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -135,7 +132,6 @@
   "svelte.enable-ts-plugin": true,
   "tabnine.experimentalAutoImports": true,
   "vsicons.dontShowNewVersionMessage": true,
-  "window.zoomLevel": 2,
   "javascript.preferences.importModuleSpecifier": "relative",
   "typescript.preferences.importModuleSpecifier": "relative",
   "css.validate": false,
@@ -156,7 +152,7 @@
   "catppuccin.accentColor": "green",
   "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk",
   "[java]": {
-    "editor.defaultFormatter": "redhat.java"
+    "editor.defaultFormatter": "xaver.clang-format"
   },
   "cSpell.ignorePaths": [
     "package-lock.json",
@@ -171,5 +167,13 @@
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "svelte.plugin.svelte.compilerWarnings": {
     "a11y-click-events-have-key-events": "ignore"
+  },
+  "window.zoomLevel": 2,
+  "java.format.settings.url": "",
+  "java.format.settings.profile": "",
+  "java.format.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 }

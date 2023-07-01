@@ -4,8 +4,8 @@
 # Enable colors
 autoload -U colors && colors
 
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=10000000
+SAVEHIST=$HISTSIZE
 
 # Thanks to https://github.com/bttger/my-zsh/blob/main/.zshrc
 
@@ -17,8 +17,15 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 setopt INC_APPEND_HISTORY
 
-# Let antidot take care of it
-# HISTFILE=~/.cache/zsh/history
+# https://unix.stackexchange.com/a/273863
+
+setopt SHARE_HISTORY
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+
+mkdir -p ~/.cache/zsh
+HISTFILE="~/.cache/zsh/history"
+
 
 # Autocompletion
 autoload -U compinit && compinit -u

@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/sh
 # mount /mnt/NAS &
 lxsession &
 picom &
@@ -11,4 +11,4 @@ playerctld daemon &
 dunst &
 kdeconnect-indicator &
 blueman-applet &
-
+nut-monitor -H &
