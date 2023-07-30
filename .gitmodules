@@ -40,3 +40,6 @@
 [submodule "src/AstroNvim"]
 	path = src/AstroNvim
 	url = https://github.com/AstroNvim/AstroNvim.git
+[submodule "src/catppuccin/heroic"]
+	path = src/catppuccin/heroic
+	url = https://github.com/catppuccin/heroic.git
