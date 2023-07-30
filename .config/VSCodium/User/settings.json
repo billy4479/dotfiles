@@ -63,7 +63,8 @@
     "windicss",
     "winit",
     "Wireframe",
-    "youtube"
+    "youtube",
+    "zstd"
   ],
   "sync.gist": "afff5cddf59660d6c6f909bf140cc05d",
   "editor.maxTokenizationLineLength": 200000,
@@ -176,4 +177,7 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "files.associations": {
+    "*.css": "css"
+  }
 }
