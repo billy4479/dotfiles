@@ -1,0 +1,1 @@
+../../src/AstroNvim/config.ld
