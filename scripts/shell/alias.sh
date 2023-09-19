@@ -61,3 +61,5 @@ alias sus="systemctl suspend"
 
 alias ffprobe="ffprobe -hide_banner"
 alias ffmpeg="ffmpeg -hide_banner"
+
+alias man="batman"

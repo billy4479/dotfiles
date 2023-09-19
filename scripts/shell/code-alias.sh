@@ -26,10 +26,12 @@ cdc() {
 #	fi
 #}
 
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-	alias c="codium --enable-features=UseOzonePlatform --ozone-platform=wayland"
-else
+# This is not required because it's being specified in ~/.config/codium-flags.conf
+
+#if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+#	alias c="codium --enable-features=UseOzonePlatform --ozone-platform=wayland"
+#else
 	alias c=codium
-fi
+#fi
 
 alias license='license -name "Giacomo Ellero"'

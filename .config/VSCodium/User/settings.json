@@ -86,7 +86,8 @@
   "editor.showFoldingControls": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "emmet.includeLanguages": {
-    "postcss": "css"
+    "postcss": "css",
+    "jinja-html": "html"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -116,7 +117,6 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "workbench.colorTheme": "Catppuccin Frappé",
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
@@ -125,7 +125,7 @@
   },
   "explorer.confirmDragAndDrop": false,
   "C_Cpp.default.cppStandard": "c++20",
-  "C_Cpp.default.cStandard": "c99",
+  "C_Cpp.default.cStandard": "c11",
   "omnisharp.useGlobalMono": "always",
   "cmake.generator": "Ninja",
   "cSpell.ignoreWords": [],
@@ -179,5 +179,8 @@
   },
   "files.associations": {
     "*.css": "css"
-  }
+  },
+  "workbench.colorTheme": "Catppuccin Frappé",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "lldb.suppressUpdateNotifications": true,
 }

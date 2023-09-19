@@ -14,12 +14,12 @@
 			{
 				"key": "sideBar",
 				"width": 177,
-				"visible": false
+				"visible": true
 			},
 			{
 				"key": "noteList",
 				"width": 233,
-				"visible": false
+				"visible": true
 			},
 			{
 				"key": "editor",
@@ -29,13 +29,14 @@
 		"visible": true
 	},
 	"noteVisiblePanes": [
+		"editor",
 		"viewer"
 	],
-	"windowContentZoomFactor": 190,
+	"windowContentZoomFactor": 150,
 	"theme": 2,
 	"editor.codeView": true,
 	"style.editor.fontSize": 16,
-	"notes.sortOrder.field": "user_created_time",
+	"notes.sortOrder.field": "user_updated_time",
 	"notes.sortOrder.reverse": true,
 	"style.editor.contentMaxWidth": 600,
 	"editor": "codium",

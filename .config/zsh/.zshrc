@@ -1,8 +1,19 @@
-# If not interactive don't do anything
-[[ $- != *i* ]] && return
+# If not interactive just source the environment
+if [[ $- != *i* ]]; then
+	source "$HOME/scripts/shell/variables.sh"
+	return
+fi
+
+# Load custom aliases
+for script in `command ls ${HOME}/scripts/shell/*.sh`; do source "$script"; done
 
 # Enable colors
 autoload -U colors && colors
+
+# History file
+# > it is here so it overrides whatever `antidot` chooses for other shells
+mkdir -p "$XDG_CACHE_HOME/zsh"
+HISTFILE="$XDG_CACHE_HOME/zsh/history"
 
 HISTSIZE=10000000
 SAVEHIST=$HISTSIZE
@@ -23,10 +34,6 @@ setopt SHARE_HISTORY
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
-mkdir -p ~/.cache/zsh
-HISTFILE="~/.cache/zsh/history"
-
-
 # Autocompletion
 autoload -U compinit && compinit -u
 zstyle ':completion:*' menu select
@@ -36,6 +43,23 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
+
+# Distrobox autocompletion
+# https://github.com/89luca89/distrobox/blob/main/completions/distrobox
+# https://www.reddit.com/r/linuxquestions/comments/xznjl1/distrobox_zsh_completions_help_pls/
+
+autoload bashcompinit
+bashcompinit
+
+if [ -e /usr/share/bash-completion/completions/distrobox ]; then
+	source /usr/share/bash-completion/completions/distrobox
+fi
+if [ -e /usr/local/share/bash-completion/completions/distrobox ]; then
+	source /usr/local/share/bash-completion/completions/distrobox
+fi
+if [ -e "${HOME}/.local/share/bash-completion/completions/distrobox" ]; then
+	source "${HOME}/.local/share/bash-completion/completions/distrobox"
+fi
 
 # For 'word' delimiter
 WORDCHARS=''
@@ -72,14 +96,15 @@ bindkey "^[[B" down-line-or-beginning-search
 #        exec tmux
 #fi
 
-export GPG_TTY=$(tty)
 setopt rmstarsilent
 
-for script in `command ls ${HOME}/scripts/shell/*.sh`; do source "$script"; done
+# Load plugins
 source ${HOME}/.config/zsh/all.zsh
 
 # Theme
 # source ${HOME}/.config/zsh/theme.zsh
+
+# Prompt
 eval "$(starship init zsh)"
 
 afetch
