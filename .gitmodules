@@ -44,5 +44,5 @@
 	path = src/catppuccin/heroic
 	url = https://github.com/catppuccin/heroic.git
 [submodule "src/konsole"]
-	path = src/konsole
+	path = src/catppuccin/konsole
 	url = https://github.com/catppuccin/konsole.git
