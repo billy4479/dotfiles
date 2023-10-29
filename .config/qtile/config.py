@@ -377,7 +377,7 @@ def init_widgets_list():
         ),
         widget.Net(
             interface="eno1",
-            format='{down} ↓↑ {up}',
+            format='{down:.1f}{down_suffix} ↓↑ {up:.1f}{up_suffix}',
             foreground=col['white'],
             background=col['bg'],
             padding=5
