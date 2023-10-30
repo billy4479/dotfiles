@@ -107,4 +107,7 @@ source ${HOME}/.config/zsh/all.zsh
 # Prompt
 eval "$(starship init zsh)"
 
-afetch
+# Fetch
+
+# afetch
+pfetch
