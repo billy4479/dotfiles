@@ -43,6 +43,7 @@ alias a="tmux attach"
 alias t="tmux attach -t main"
 alias ssh="TERM=xterm ssh"
 alias gotop="gotop --nvidia"
+alias nvidia-settings='nvidia-settings --config=${XDG_CONFIG_HOME}/nvidia/settings'
 
 alias ls="eza -a --icons --color=auto --group-directories-first"
 #alias ls="logo-ls -Ah"

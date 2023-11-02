@@ -10,6 +10,8 @@ export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 export JAVA_HOME="/usr/lib/jvm/default"
 export GOPATH="${XDG_DATA_HOME}/go"
 export npm_config_prefix="$HOME/.local"
+export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv"
+export __GL_SHADER_DISK_CACHE_PATH="${XDG_CACHE_HOME}/nv"
 
 export PATH="$HOME/.local/bin:$CARGO_HOME/bin:$GOPATH/bin:$HOME/Games/bin:$PNPM_HOME:$PATH"
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
@@ -45,13 +47,12 @@ export servers="$HOME/Games/Server Minecraft"
 # Let's try without for a while
 # eval "$(antidot init)"
 
-if [ ! -z "$HISTFILE" ]; then
-  HISTDIR=${HISTFILE%/*}
-  mkdir -p "$HISTDIR"
+if [ -n "$HISTFILE" ]; then
+	HISTDIR=${HISTFILE%/*}
+	mkdir -p "$HISTDIR"
 fi
 
-if [ ! -z "$CONTAINER_ID" ]; then
-  # We are inside distrobox
-  export LANG="en_CA.UTF-8"
+if [ -n "$CONTAINER_ID" ]; then
+	# We are inside distrobox
+	export LANG="en_CA.UTF-8"
 fi
-
