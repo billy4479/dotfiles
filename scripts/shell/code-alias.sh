@@ -26,12 +26,11 @@ cdc() {
 #	fi
 #}
 
-# This is not required because it's being specified in ~/.config/codium-flags.conf
-
-#if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-#	alias c="codium --enable-features=UseOzonePlatform --ozone-platform=wayland"
-#else
-	alias c=codium
-#fi
+# Wayland flags in ~/.config/codium-flags.conf
+if [ $(cat /etc/hostname) = "microos" ]; then
+	alias c="distrobox enter arch-generic -- codium"
+else
+	alias c="codium"
+fi
 
 alias license='license -name "Giacomo Ellero"'

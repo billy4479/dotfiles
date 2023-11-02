@@ -44,7 +44,7 @@ alias t="tmux attach -t main"
 alias ssh="TERM=xterm ssh"
 alias gotop="gotop --nvidia"
 
-alias ls="exa -a --icons --color=auto --group-directories-first"
+alias ls="eza -a --icons --color=auto --group-directories-first"
 #alias ls="logo-ls -Ah"
 alias ll="ls -lh"
 alias std-ls="command ls --color=auto"
