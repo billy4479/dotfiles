@@ -1,1 +1,6 @@
+include catppuccin-frappe
+
+set recolor
+set recolor-keephue
+
 set scroll-step 60

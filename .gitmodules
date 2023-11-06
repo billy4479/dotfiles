@@ -46,3 +46,6 @@
 [submodule "src/konsole"]
 	path = src/catppuccin/konsole
 	url = https://github.com/catppuccin/konsole.git
+[submodule "src/catppuccin/zathura"]
+	path = src/catppuccin/zathura
+	url = https://github.com/catppuccin/zathura.git
