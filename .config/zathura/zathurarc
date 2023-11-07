@@ -4,3 +4,5 @@ set recolor
 set recolor-keephue
 
 set scroll-step 60
+
+set font "SF Pro Display"
