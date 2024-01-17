@@ -1,5 +1,8 @@
 # dotfiles
 
+> [!WARNING]
+> This repo is deprecated, I moved my config files to [nix](https://github.com/billy4479/nix)!
+
 A collection of my configuration files
 
 ### How to install
